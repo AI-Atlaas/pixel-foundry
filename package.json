@@ -1,0 +1,72 @@
+{
+  "name": "pixel-foundry",
+  "version": "0.1.0",
+  "description": "A pixel-art design system for React, built on Base UI.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AI-Atlaas/pixel-foundary.git"
+  },
+  "homepage": "https://github.com/AI-Atlaas/pixel-foundary#readme",
+  "bugs": {
+    "url": "https://github.com/AI-Atlaas/pixel-foundary/issues"
+  },
+  "type": "module",
+  "keywords": [
+    "react",
+    "base-ui",
+    "design-system",
+    "pixel-art",
+    "components",
+    "theme"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./theme": {
+      "types": "./dist/theme.d.ts",
+      "import": "./dist/theme.js"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./themes/*": "./dist/themes/*",
+    "./fonts/*": "./dist/fonts/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE.md",
+    "README.md"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && tsup && node scripts/build-styles.mjs",
+    "typecheck": "tsc",
+    "test": "node --test test/",
+    "prepublishOnly": "npm run typecheck && npm run build && npm test"
+  },
+  "peerDependencies": {
+    "@base-ui/react": "^1.7.0",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "pixelarticons": "2.4.2"
+  },
+  "devDependencies": {
+    "@base-ui/react": "^1.7.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3"
+  }
+}
