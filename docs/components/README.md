@@ -7,7 +7,7 @@ description: All Pixel Foundry components at a glance.
 Every component is a thin wrapper around [Base UI](https://base-ui.com) parts with Pixel Foundry classes applied. Import them all from the package root:
 
 ```tsx
-import { PixelButton, PixelSelect, PixelDrawer } from 'pixel-foundry';
+import { PixelButton, PixelSelect, PixelDrawer } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Catalog
@@ -41,7 +41,7 @@ The wrappers are deliberately simple and opinionated. When you need a different 
 Menu components share one action type, and the navigation menu has its own link type. Both are exported:
 
 ```ts
-import type { MenuAction, NavigationLink } from 'pixel-foundry';
+import type { MenuAction, NavigationLink } from '@ai-atlaas/pixel-foundry';
 
 type MenuAction = { label: string; onSelect: () => void };
 type NavigationLink = { label: string; href: string; description?: string };

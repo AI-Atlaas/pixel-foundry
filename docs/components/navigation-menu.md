@@ -11,7 +11,7 @@ Site navigation with dropdown panels of links, suited to a landing-page header.
 ## Import
 
 ```tsx
-import { PixelNavigationMenu } from 'pixel-foundry';
+import { PixelNavigationMenu } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

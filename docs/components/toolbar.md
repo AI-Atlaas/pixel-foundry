@@ -11,7 +11,7 @@ A row of icon buttons with arrow-key navigation between them.
 ## Import
 
 ```tsx
-import { PixelToolbar } from 'pixel-foundry';
+import { PixelToolbar } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

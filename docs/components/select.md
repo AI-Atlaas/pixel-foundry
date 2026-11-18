@@ -11,7 +11,7 @@ A controlled dropdown select with full keyboard support.
 ## Import
 
 ```tsx
-import { PixelSelect } from 'pixel-foundry';
+import { PixelSelect } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

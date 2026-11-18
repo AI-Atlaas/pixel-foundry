@@ -11,7 +11,7 @@ A controlled radio group with a visible group label.
 ## Import
 
 ```tsx
-import { PixelRadioGroup } from 'pixel-foundry';
+import { PixelRadioGroup } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

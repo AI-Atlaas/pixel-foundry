@@ -11,7 +11,7 @@ Pixel Foundry is themed with CSS custom properties. You can set them in three wa
 Import one of the five ready-made palettes:
 
 ```tsx
-import 'pixel-foundry/themes/parchment.css';
+import '@ai-atlaas/pixel-foundry/themes/parchment.css';
 ```
 
 The light tokens live on `:root` and the dark tokens on `.dark` or `[data-theme="dark"]`, so dark mode is a single class:
@@ -43,7 +43,7 @@ See [Design tokens](../design-system/tokens.md) for the full list.
 `applyTheme` writes every token as an inline CSS variable on `<html>` (or any element you pass). Use it for theme pickers and user preferences:
 
 ```ts
-import { applyTheme } from 'pixel-foundry';
+import { applyTheme } from '@ai-atlaas/pixel-foundry';
 
 applyTheme({
   preset: 'ocean',     // night-garden | parchment | pocket | arcade | ocean
@@ -77,7 +77,7 @@ When you pass a custom `accent`, Pixel Foundry picks black or white text for it 
 ### Persisting a user's choice
 
 ```ts
-import { applyTheme, type Settings } from 'pixel-foundry';
+import { applyTheme, type Settings } from '@ai-atlaas/pixel-foundry';
 
 const saved = JSON.parse(localStorage.getItem('theme') ?? '{}') as Partial<Settings>;
 applyTheme(saved);
@@ -91,10 +91,10 @@ export function setTheme(next: Partial<Settings>) {
 
 ## Generating CSS (server or build time)
 
-`pixel-foundry/theme` has no React or DOM dependency:
+`@ai-atlaas/pixel-foundry/theme` has no React or DOM dependency:
 
 ```ts
-import { presets, tokens, presetCSS, exportCSS } from 'pixel-foundry/theme';
+import { presets, tokens, presetCSS, exportCSS } from '@ai-atlaas/pixel-foundry/theme';
 
 presets.map((p) => p.id);         // ['night-garden', 'parchment', …]
 tokens({ ...settings });          // Record<'--token', value> for one mode

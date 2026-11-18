@@ -9,7 +9,7 @@ description: The Icon component and the available icon names.
 `Icon` renders a [Pixelarticons](https://pixelarticons.com) icon. The icon inherits the current text color.
 
 ```tsx
-import { Icon } from 'pixel-foundry';
+import { Icon } from '@ai-atlaas/pixel-foundry';
 
 <Icon name="star" />          // 24px
 <Icon name="check" size={12} /> // compact 12px

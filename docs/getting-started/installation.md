@@ -18,11 +18,11 @@ description: Requirements and framework-specific setup.
 
 | Import path | Contents |
 | --- | --- |
-| `pixel-foundry` | React components, `Icon`, `ClickEffects` and the theme helpers |
-| `pixel-foundry/theme` | Theme helpers only. No React, so you can use them on the server or in build scripts |
-| `pixel-foundry/styles.css` | Component styles and `@font-face` rules |
-| `pixel-foundry/themes/<name>.css` | One palette: light tokens on `:root`, dark tokens on `.dark` |
-| `pixel-foundry/fonts/*` | The font files and their licenses |
+| `@ai-atlaas/pixel-foundry` | React components, `Icon`, `ClickEffects` and the theme helpers |
+| `@ai-atlaas/pixel-foundry/theme` | Theme helpers only. No React, so you can use them on the server or in build scripts |
+| `@ai-atlaas/pixel-foundry/styles.css` | Component styles and `@font-face` rules |
+| `@ai-atlaas/pixel-foundry/themes/<name>.css` | One palette: light tokens on `:root`, dark tokens on `.dark` |
+| `@ai-atlaas/pixel-foundry/fonts/*` | The font files and their licenses |
 
 ## Next.js (App Router)
 
@@ -30,8 +30,8 @@ Import the CSS in your root layout:
 
 ```tsx
 // app/layout.tsx
-import 'pixel-foundry/styles.css';
-import 'pixel-foundry/themes/night-garden.css';
+import '@ai-atlaas/pixel-foundry/styles.css';
+import '@ai-atlaas/pixel-foundry/themes/night-garden.css';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -50,8 +50,8 @@ The component bundle is marked `"use client"`, so you can render Pixel Foundry c
 
 ```tsx
 // src/main.tsx
-import 'pixel-foundry/styles.css';
-import 'pixel-foundry/themes/night-garden.css';
+import '@ai-atlaas/pixel-foundry/styles.css';
+import '@ai-atlaas/pixel-foundry/themes/night-garden.css';
 import { createRoot } from 'react-dom/client';
 import { App } from './App';
 

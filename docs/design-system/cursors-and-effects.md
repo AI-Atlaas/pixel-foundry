@@ -41,7 +41,7 @@ or in CSS:
 `ClickEffects` adds a small burst of pixel particles at each mouse click. It's purely decorative.
 
 ```tsx
-import { ClickEffects } from 'pixel-foundry';
+import { ClickEffects } from '@ai-atlaas/pixel-foundry';
 
 export function App() {
   return (

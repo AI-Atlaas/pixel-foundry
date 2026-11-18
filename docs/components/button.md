@@ -11,13 +11,13 @@ A button with a pixel border and a hard shadow. When pressed, it moves into its 
 ## Import
 
 ```tsx
-import { PixelButton } from 'pixel-foundry';
+import { PixelButton } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage
 
 ```tsx
-import { PixelButton, Icon } from 'pixel-foundry';
+import { PixelButton, Icon } from '@ai-atlaas/pixel-foundry';
 
 <PixelButton onClick={start}><Icon name="plus" size={12} /> Press start</PixelButton>
 <PixelButton variant="secondary">Secondary</PixelButton>

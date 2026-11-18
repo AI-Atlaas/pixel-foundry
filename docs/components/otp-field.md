@@ -11,7 +11,7 @@ A one-time-code input with one box per digit. Pasting a whole code fills every b
 ## Import
 
 ```tsx
-import { PixelOTPField } from 'pixel-foundry';
+import { PixelOTPField } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

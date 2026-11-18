@@ -9,7 +9,7 @@ description: A labelled checkbox. The whole row is clickable.
 ## Import
 
 ```tsx
-import { PixelCheckbox } from 'pixel-foundry';
+import { PixelCheckbox } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

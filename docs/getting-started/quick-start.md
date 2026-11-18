@@ -9,19 +9,19 @@ description: Install Pixel Foundry and render your first pixel component.
 {% tabs %}
 {% tab title="npm" %}
 ```bash
-npm install pixel-foundry @base-ui/react
+npm install @ai-atlaas/pixel-foundry @base-ui/react
 ```
 {% endtab %}
 
 {% tab title="pnpm" %}
 ```bash
-pnpm add pixel-foundry @base-ui/react
+pnpm add @ai-atlaas/pixel-foundry @base-ui/react
 ```
 {% endtab %}
 
 {% tab title="yarn" %}
 ```bash
-yarn add pixel-foundry @base-ui/react
+yarn add @ai-atlaas/pixel-foundry @base-ui/react
 ```
 {% endtab %}
 {% endtabs %}
@@ -33,8 +33,8 @@ yarn add pixel-foundry @base-ui/react
 Import the component stylesheet and **one** theme once, at the root of your app:
 
 ```tsx
-import 'pixel-foundry/styles.css';
-import 'pixel-foundry/themes/night-garden.css';
+import '@ai-atlaas/pixel-foundry/styles.css';
+import '@ai-atlaas/pixel-foundry/themes/night-garden.css';
 ```
 
 Available themes: `night-garden`, `parchment`, `pocket`, `arcade`, `ocean`.
@@ -43,7 +43,7 @@ Available themes: `night-garden`, `parchment`, `pocket`, `arcade`, `ocean`.
 
 ```tsx
 import { useState } from 'react';
-import { PixelButton, PixelModal, Icon } from 'pixel-foundry';
+import { PixelButton, PixelModal, Icon } from '@ai-atlaas/pixel-foundry';
 
 export function StartScreen() {
   const [open, setOpen] = useState(false);

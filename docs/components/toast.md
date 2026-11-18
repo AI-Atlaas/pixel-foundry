@@ -11,7 +11,7 @@ A button that shows a toast notification. Only one toast is shown at a time, and
 ## Import
 
 ```tsx
-import { PixelToastTrigger } from 'pixel-foundry';
+import { PixelToastTrigger } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

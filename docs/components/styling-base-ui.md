@@ -66,7 +66,7 @@ import { Accordion } from '@base-ui/react/accordion';
 
 ```tsx
 import { Menu } from '@base-ui/react/menu';
-import { Icon } from 'pixel-foundry';
+import { Icon } from '@ai-atlaas/pixel-foundry';
 
 <Menu.Root>
   <Menu.Trigger className="px-button secondary">

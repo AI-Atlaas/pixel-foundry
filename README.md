@@ -7,13 +7,13 @@ Crisp pixel borders, hard offset shadows, bitmap icons and cursors, and a pixel 
 ![Pixel Foundry components in the Night Garden, Parchment, Arcade, Ocean and Pocket palettes, layered over each other](docs/.gitbook/assets/hero.png)
 
 ```bash
-npm install pixel-foundry @base-ui/react
+npm install @ai-atlaas/pixel-foundry @base-ui/react
 ```
 
 ```tsx
-import 'pixel-foundry/styles.css';
-import 'pixel-foundry/themes/night-garden.css';
-import { PixelButton, PixelSwitch, Icon } from 'pixel-foundry';
+import '@ai-atlaas/pixel-foundry/styles.css';
+import '@ai-atlaas/pixel-foundry/themes/night-garden.css';
+import { PixelButton, PixelSwitch, Icon } from '@ai-atlaas/pixel-foundry';
 
 export function App() {
   return (

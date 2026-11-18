@@ -11,7 +11,7 @@ A two-thumb slider for a range of money. The values are formatted as currency.
 ## Import
 
 ```tsx
-import { PixelRangeSlider } from 'pixel-foundry';
+import { PixelRangeSlider } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

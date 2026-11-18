@@ -11,7 +11,7 @@ Shows a measured value within a known range, such as a rating or storage used. F
 ## Import
 
 ```tsx
-import { PixelMeter } from 'pixel-foundry';
+import { PixelMeter } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

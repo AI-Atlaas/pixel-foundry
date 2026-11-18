@@ -11,7 +11,7 @@ Shows a menu on right-click or long-press of its children. Right-click can't be 
 ## Import
 
 ```tsx
-import { PixelContextMenu } from 'pixel-foundry';
+import { PixelContextMenu } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

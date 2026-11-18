@@ -11,7 +11,7 @@ A link that shows a preview card when hovered or focused.
 ## Import
 
 ```tsx
-import { PixelPreviewCard } from 'pixel-foundry';
+import { PixelPreviewCard } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage
