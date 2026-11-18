@@ -5,11 +5,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AI-Atlaas/pixel-foundary.git"
+    "url": "git+https://github.com/AI-Atlaas/pixel-foundry.git"
   },
-  "homepage": "https://github.com/AI-Atlaas/pixel-foundary#readme",
+  "homepage": "https://github.com/AI-Atlaas/pixel-foundry#readme",
   "bugs": {
-    "url": "https://github.com/AI-Atlaas/pixel-foundary/issues"
+    "url": "https://github.com/AI-Atlaas/pixel-foundry/issues"
   },
   "type": "module",
   "keywords": [

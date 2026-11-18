@@ -7,8 +7,8 @@ description: Work on Pixel Foundry locally, test it and publish a release.
 ## Setup
 
 ```bash
-git clone https://github.com/AI-Atlaas/pixel-foundary.git
-cd pixel-foundary
+git clone https://github.com/AI-Atlaas/pixel-foundry.git
+cd pixel-foundry
 npm install
 ```
 
@@ -64,7 +64,7 @@ Requires Node.js 20 or newer.
 ```bash
 npm pack
 cd ../my-app
-npm install ../pixel-foundary/pixel-foundry-0.1.0.tgz
+npm install ../pixel-foundry/pixel-foundry-0.1.0.tgz
 ```
 
 ## Publishing
