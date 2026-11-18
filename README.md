@@ -58,7 +58,7 @@ The full docs live in [`docs/`](docs/README.md) (GitBook format):
 ├── styles/       component stylesheet and bundled fonts
 ├── scripts/      build step that writes dist/styles.css, fonts and themes
 ├── test/         palette contrast and token tests
-└── docs/         GitBook documentation (configured by .gitbook.yaml)
+└── docs/         GitBook documentation (configured by docs/gitbook-docs.yaml)
 ```
 
 ## Development
