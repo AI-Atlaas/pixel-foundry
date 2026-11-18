@@ -77,4 +77,6 @@ npm publish
 
 ## Docs
 
-The `docs/` folder is a GitBook space. `.gitbook.yaml` at the repository root points GitBook at it, and `docs/SUMMARY.md` defines the navigation. To publish, connect the GitHub repository in GitBook through **Git Sync**.
+The `docs/` folder is synced to GitBook with site-wide **Git Sync**, using `docs/` as the Project directory. `docs/gitbook-docs.yaml` describes the site's sections and maps the Pixel Foundry space to the `docs/` folder. `docs/README.md` is the home page and `docs/SUMMARY.md` defines the navigation.
+
+Edits made in GitBook come back as commits on `main`, so pull before editing the docs locally.
