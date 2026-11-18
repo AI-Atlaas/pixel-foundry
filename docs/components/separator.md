@@ -9,7 +9,7 @@ description: A horizontal or vertical divider.
 ## Import
 
 ```tsx
-import { PixelSeparator } from 'pixel-foundry';
+import { PixelSeparator } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

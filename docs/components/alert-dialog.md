@@ -11,7 +11,7 @@ A confirmation dialog for destructive actions. It renders its own trigger button
 ## Import
 
 ```tsx
-import { PixelAlertDialog } from 'pixel-foundry';
+import { PixelAlertDialog } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

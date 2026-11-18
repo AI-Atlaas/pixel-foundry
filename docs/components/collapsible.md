@@ -11,7 +11,7 @@ A button that shows and hides a panel.
 ## Import
 
 ```tsx
-import { PixelCollapsible } from 'pixel-foundry';
+import { PixelCollapsible } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

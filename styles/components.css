@@ -1,5 +1,5 @@
 /* Pixel Foundry · pixel-art styles for Base UI components.
- * Pair with a theme file: import 'pixel-foundry/themes/<preset>.css'. */
+ * Pair with a theme file: import '@ai-atlaas/pixel-foundry/themes/<preset>.css'. */
 @font-face{font-family:'Pixelify Sans';src:url('./fonts/pixelify-latin.ttf') format('truetype');font-weight:400 700;font-display:swap}
 @font-face{font-family:'IBM Plex Mono';src:url('./fonts/plex-latin.ttf') format('truetype');font-weight:400;font-display:swap}
 .px-button,.px-input,.px-select,.px-popup,.px-dialog,.px-checkbox,.px-switch,.px-radio,.px-tab,.px-tooltip{font-family:var(--font-body);font-size:calc(12px * var(--type-scale,1.333333));border-radius:var(--radius);box-sizing:border-box}

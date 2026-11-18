@@ -4,7 +4,7 @@ description: The two open-source typefaces bundled with Pixel Foundry.
 
 # Fonts
 
-Both fonts are self-hosted: they ship inside the package at `pixel-foundry/fonts/` and load from your own domain, with no external font service.
+Both fonts are self-hosted: they ship inside the package at `@ai-atlaas/pixel-foundry/fonts/` and load from your own domain, with no external font service.
 
 ## Pixelify Sans
 

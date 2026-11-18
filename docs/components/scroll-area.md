@@ -11,7 +11,7 @@ A scroll container with a pixel scrollbar. Give it a height with CSS.
 ## Import
 
 ```tsx
-import { PixelScrollArea } from 'pixel-foundry';
+import { PixelScrollArea } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

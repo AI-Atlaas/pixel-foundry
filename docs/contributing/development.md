@@ -21,7 +21,7 @@ Requires Node.js 20 or newer.
 | `npm run typecheck` | TypeScript check of `src/` |
 | `npm run build` | Clears `dist/`, bundles `src/` with tsup (ESM + type definitions), copies `styles/` and fonts, and generates `dist/themes/*.css` |
 | `npm test` | Runs `test/*.test.mjs` against the build: WCAG contrast for every palette, token mapping, theme CSS output |
-| `npm pack` | Builds `pixel-foundry-<version>.tgz`, exactly what npm would publish |
+| `npm pack` | Builds `ai-atlaas-pixel-foundry-<version>.tgz`, exactly what npm would publish |
 
 `npm test` reads from `dist/`, so run `npm run build` first.
 
@@ -64,7 +64,7 @@ Requires Node.js 20 or newer.
 ```bash
 npm pack
 cd ../my-app
-npm install ../pixel-foundry/pixel-foundry-0.1.0.tgz
+npm install ../pixel-foundry/ai-atlaas-pixel-foundry-0.1.0.tgz
 ```
 
 ## Publishing
@@ -75,7 +75,9 @@ npm login
 npm publish
 ```
 
-`prepublishOnly` runs the typecheck, build and tests first. Before the first publish, check that the name `pixel-foundry` is still available on npm.
+`prepublishOnly` runs the typecheck, build and tests first.
+
+The package is published under the **AI Atlaas** npm organization as `@ai-atlaas/pixel-foundry`. To publish, your npm account must be a member of the `ai-atlaas` organization with permission to publish. `publishConfig.access` is set to `public` in `package.json`, because scoped packages are private by default.
 
 ## Docs
 

@@ -11,7 +11,7 @@ A row of toggle buttons, for quick filters for example. Only one button can be p
 ## Import
 
 ```tsx
-import { PixelToggleGroup } from 'pixel-foundry';
+import { PixelToggleGroup } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

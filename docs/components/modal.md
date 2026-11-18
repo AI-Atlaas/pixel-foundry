@@ -11,7 +11,7 @@ A controlled dialog with a title, an optional description and a close button.
 ## Import
 
 ```tsx
-import { PixelModal } from 'pixel-foundry';
+import { PixelModal } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

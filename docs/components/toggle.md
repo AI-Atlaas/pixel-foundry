@@ -11,7 +11,7 @@ A single on/off button with a heart icon, for actions like "save" or "favorite".
 ## Import
 
 ```tsx
-import { PixelToggle } from 'pixel-foundry';
+import { PixelToggle } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

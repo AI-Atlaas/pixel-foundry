@@ -9,7 +9,7 @@ description: A single-value slider with a live value label.
 ## Import
 
 ```tsx
-import { PixelSlider } from 'pixel-foundry';
+import { PixelSlider } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

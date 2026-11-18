@@ -11,7 +11,7 @@ Groups related fields under a legend. Setting `disabled` disables every control 
 ## Import
 
 ```tsx
-import { PixelFieldset } from 'pixel-foundry';
+import { PixelFieldset } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

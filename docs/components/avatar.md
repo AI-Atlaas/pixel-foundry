@@ -11,7 +11,7 @@ Shows an image, or the initials if there's no image or it fails to load.
 ## Import
 
 ```tsx
-import { PixelAvatar } from 'pixel-foundry';
+import { PixelAvatar } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

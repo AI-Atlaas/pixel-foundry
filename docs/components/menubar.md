@@ -11,7 +11,7 @@ A desktop-style menu bar. Use the arrow keys to move between menus and items.
 ## Import
 
 ```tsx
-import { PixelMenubar } from 'pixel-foundry';
+import { PixelMenubar } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

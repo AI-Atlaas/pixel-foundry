@@ -11,7 +11,7 @@ A searchable single-select with a clear button. The list filters as you type, an
 ## Import
 
 ```tsx
-import { PixelCombobox } from 'pixel-foundry';
+import { PixelCombobox } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

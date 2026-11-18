@@ -9,9 +9,9 @@ description: A pixel-art design system for React, built on Base UI.
 **Pixel Foundry** is a small design system with a big personality: crisp pixel borders, hard offset shadows, bitmap icons and cursors, and a pixel display font. All of it sits on top of the accessible, unstyled primitives of [Base UI](https://base-ui.com).
 
 ```tsx
-import 'pixel-foundry/styles.css';
-import 'pixel-foundry/themes/night-garden.css';
-import { PixelButton } from 'pixel-foundry';
+import '@ai-atlaas/pixel-foundry/styles.css';
+import '@ai-atlaas/pixel-foundry/themes/night-garden.css';
+import { PixelButton } from '@ai-atlaas/pixel-foundry';
 
 <PixelButton>Press start</PixelButton>
 ```
@@ -32,9 +32,9 @@ import { PixelButton } from 'pixel-foundry';
 | Layer | Responsibility | Provided by |
 | --- | --- | --- |
 | Behavior | Keyboard navigation, focus, ARIA, positioning, open/close state | `@base-ui/react` |
-| Look | Pixel geometry, states, typography | `pixel-foundry/styles.css` (`px-*` classes) |
-| Color | Semantic colors and geometry values | `pixel-foundry/themes/*.css` or `applyTheme()` |
-| Convenience | Pre-assembled components with sensible markup | `pixel-foundry` React exports |
+| Look | Pixel geometry, states, typography | `@ai-atlaas/pixel-foundry/styles.css` (`px-*` classes) |
+| Color | Semantic colors and geometry values | `@ai-atlaas/pixel-foundry/themes/*.css` or `applyTheme()` |
+| Convenience | Pre-assembled components with sensible markup | `@ai-atlaas/pixel-foundry` React exports |
 
 Because behavior stays in Base UI, Pixel Foundry doesn't re-implement keyboard handling or focus management. It only changes how things look.
 

@@ -9,7 +9,7 @@ description: An on/off switch with a visible label.
 ## Import
 
 ```tsx
-import { PixelSwitch } from 'pixel-foundry';
+import { PixelSwitch } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

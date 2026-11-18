@@ -11,7 +11,7 @@ A labelled list of checkboxes that share one array value.
 ## Import
 
 ```tsx
-import { PixelCheckboxGroup } from 'pixel-foundry';
+import { PixelCheckboxGroup } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

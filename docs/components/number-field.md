@@ -11,7 +11,7 @@ A number input with − and + buttons and a hint showing the allowed range.
 ## Import
 
 ```tsx
-import { PixelNumberField } from 'pixel-foundry';
+import { PixelNumberField } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

@@ -11,7 +11,7 @@ A free-text input with suggestions. Unlike a combobox, any text is a valid value
 ## Import
 
 ```tsx
-import { PixelAutocomplete } from 'pixel-foundry';
+import { PixelAutocomplete } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

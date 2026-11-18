@@ -69,7 +69,7 @@ The values are SVG data URIs drawn in the current palette. See [Cursors & effect
 ## Reading tokens in JavaScript
 
 ```ts
-import { tokens, defaults } from 'pixel-foundry/theme';
+import { tokens, defaults } from '@ai-atlaas/pixel-foundry/theme';
 
 const t = tokens({ ...defaults, preset: 'arcade', dark: true });
 t['--primary']; // '#c6a0ff'

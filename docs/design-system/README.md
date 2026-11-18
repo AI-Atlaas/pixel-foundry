@@ -42,7 +42,7 @@ Behavior comes from Base UI: dialog focus trapping, list selection, menu keyboar
 ┌──────────────────────────────────────────────┐
 │  Your app                                    │
 ├──────────────────────────────────────────────┤
-│  pixel-foundry React wrappers  (optional)    │
+│  @ai-atlaas/pixel-foundry React wrappers     │
 ├──────────────────────────────────────────────┤
 │  styles.css: px-* classes + state selectors │
 ├──────────────────────────────────────────────┤

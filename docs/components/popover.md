@@ -11,7 +11,7 @@ A small panel attached to a trigger button with an info icon.
 ## Import
 
 ```tsx
-import { PixelPopover } from 'pixel-foundry';
+import { PixelPopover } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

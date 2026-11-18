@@ -11,7 +11,7 @@ A side panel that slides in from the right and can be swiped closed on touch dev
 ## Import
 
 ```tsx
-import { PixelDrawer } from 'pixel-foundry';
+import { PixelDrawer } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

@@ -11,7 +11,7 @@ An icon button with a tooltip. The tooltip text describes the button, and `label
 ## Import
 
 ```tsx
-import { PixelTooltip } from 'pixel-foundry';
+import { PixelTooltip } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Usage

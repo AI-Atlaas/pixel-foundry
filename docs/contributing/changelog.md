@@ -13,8 +13,8 @@ First release as a standalone npm package, extracted from the Pixel Foundry play
 * 31 React components built on Base UI: 6 core wrappers and 25 extended components.
 * `Icon`, with 23 Pixelarticons icons and typed names (`IconName`, `iconNames`).
 * `ClickEffects` for decorative click sparks.
-* Five palettes with light and dark modes, shipped as `pixel-foundry/themes/*.css`.
-* `applyTheme()` for runtime theming and `presetCSS()` for build-time CSS. Both are also exported from the React-free `pixel-foundry/theme` entry.
+* Five palettes with light and dark modes, shipped as `@ai-atlaas/pixel-foundry/themes/*.css`.
+* `applyTheme()` for runtime theming and `presetCSS()` for build-time CSS. Both are also exported from the React-free `@ai-atlaas/pixel-foundry/theme` entry.
 * Self-hosted Pixelify Sans and IBM Plex Mono fonts.
 * A WCAG AA contrast test for every palette.
 
