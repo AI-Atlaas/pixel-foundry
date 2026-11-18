@@ -31,5 +31,6 @@ site:
           path: pixel-foundry
           default: true
           content:
-            # docs/README.md is the home page; docs/SUMMARY.md is the navigation.
-            directory: ./docs
+            # This folder (docs/) is the space: README.md is the home page,
+            # SUMMARY.md is the navigation.
+            directory: .
