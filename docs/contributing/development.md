@@ -49,7 +49,9 @@ Requires Node.js 20 or newer.
 1. Write the wrapper in `src/extras.tsx`. Compose Base UI parts and apply `px-*` classes, and require a `label` or `children` for the accessible name.
 2. Add any new styles to `styles/components.css`. Use tokens (`var(--primary)`, `var(--pixel)`, …), never hard-coded colors.
 3. Run `npm run typecheck && npm run build`.
-4. Document it in the right page under `docs/components/` and add it to the catalog in `docs/components/README.md`.
+4. Add a page for it in the right group folder, for example `docs/components/forms/date-field.md`. Follow the existing pages: a screenshot, then **Import**, **Usage** and **Props** sections.
+5. Add the screenshot to `docs/.gitbook/assets/components/`, using the same file name as the page.
+6. Link the page in `docs/SUMMARY.md`, the group's `README.md` table and the catalog in `docs/components/README.md`.
 
 ## Adding or changing a palette
 

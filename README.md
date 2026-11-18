@@ -46,7 +46,7 @@ The full docs live in [`docs/`](docs/README.md) (GitBook format):
 | | |
 | --- | --- |
 | **Getting started** | [Quick start](docs/getting-started/quick-start.md) · [Installation](docs/getting-started/installation.md) · [Theming](docs/getting-started/theming.md) |
-| **Components** | [Overview](docs/components/README.md) · [Actions](docs/components/actions.md) · [Forms](docs/components/forms.md) · [Overlays](docs/components/overlays.md) · [Menus & navigation](docs/components/menus-and-navigation.md) · [Display](docs/components/display.md) · [Icons](docs/components/icons.md) · [Raw Base UI](docs/components/styling-base-ui.md) |
+| **Components** | [Overview](docs/components/README.md) · [Actions](docs/components/actions/README.md) · [Forms](docs/components/forms/README.md) · [Overlays](docs/components/overlays/README.md) · [Menus & navigation](docs/components/menus-and-navigation/README.md) · [Display](docs/components/display/README.md) · [Icons](docs/components/icons.md) · [Raw Base UI](docs/components/styling-base-ui.md) |
 | **Design system** | [Principles](docs/design-system/README.md) · [Tokens](docs/design-system/tokens.md) · [Palettes](docs/design-system/palettes.md) · [Typography](docs/design-system/typography.md) · [Cursors & effects](docs/design-system/cursors-and-effects.md) · [Accessibility](docs/design-system/accessibility.md) |
 | **Resources** | [Fonts](docs/resources/fonts.md) · [Icon pack](docs/resources/icon-pack.md) · [Research & sources](docs/resources/research-and-sources.md) · [License](docs/resources/license.md) |
 | **Contributing** | [Development](docs/contributing/development.md) · [Changelog](docs/contributing/changelog.md) |

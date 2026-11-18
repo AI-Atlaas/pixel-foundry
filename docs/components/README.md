@@ -12,13 +12,15 @@ import { PixelButton, PixelSelect, PixelDrawer } from 'pixel-foundry';
 
 ## Catalog
 
+Every component has its own page with a screenshot, usage example and props table.
+
 | Group | Components |
 | --- | --- |
-| [Actions](actions.md) | `PixelButton`, `PixelToggle`, `PixelToggleGroup`, `PixelToolbar` |
-| [Forms](forms.md) | `PixelCheckbox`, `PixelCheckboxGroup`, `PixelSwitch`, `PixelRadioGroup`, `PixelSelect`, `PixelCombobox`, `PixelAutocomplete`, `PixelSlider`, `PixelRangeSlider`, `PixelNumberField`, `PixelOTPField`, `PixelFieldset` |
-| [Overlays](overlays.md) | `PixelModal`, `PixelAlertDialog`, `PixelDrawer`, `PixelPopover`, `PixelPreviewCard`, `PixelTooltip`, `PixelToastTrigger` |
-| [Menus & navigation](menus-and-navigation.md) | `PixelContextMenu`, `PixelMenubar`, `PixelNavigationMenu` |
-| [Display](display.md) | `PixelAvatar`, `PixelMeter`, `PixelSeparator`, `PixelScrollArea`, `PixelCollapsible` |
+| [Actions](actions/README.md) | [Button](actions/button.md) · [Toggle](actions/toggle.md) · [Toggle group](actions/toggle-group.md) · [Toolbar](actions/toolbar.md) |
+| [Forms](forms/README.md) | [Checkbox](forms/checkbox.md) · [Checkbox group](forms/checkbox-group.md) · [Switch](forms/switch.md) · [Radio group](forms/radio-group.md) · [Select](forms/select.md) · [Combobox](forms/combobox.md) · [Autocomplete](forms/autocomplete.md) · [Slider](forms/slider.md) · [Range slider](forms/range-slider.md) · [Number field](forms/number-field.md) · [OTP field](forms/otp-field.md) · [Fieldset](forms/fieldset.md) · [Input](forms/input.md) |
+| [Overlays](overlays/README.md) | [Modal](overlays/modal.md) · [Alert dialog](overlays/alert-dialog.md) · [Drawer](overlays/drawer.md) · [Popover](overlays/popover.md) · [Preview card](overlays/preview-card.md) · [Tooltip](overlays/tooltip.md) · [Toast](overlays/toast.md) |
+| [Menus & navigation](menus-and-navigation/README.md) | [Context menu](menus-and-navigation/context-menu.md) · [Menubar](menus-and-navigation/menubar.md) · [Navigation menu](menus-and-navigation/navigation-menu.md) |
+| [Display](display/README.md) | [Avatar](display/avatar.md) · [Meter](display/meter.md) · [Separator](display/separator.md) · [Scroll area](display/scroll-area.md) · [Collapsible](display/collapsible.md) · [Badge](display/badge.md) |
 | [Icons](icons.md) | `Icon` |
 | Effects | `ClickEffects` (see [Cursors & effects](../design-system/cursors-and-effects.md)) |
 
