@@ -21,12 +21,19 @@ export function tokens(s: Settings): Record<string,string> {
 }
 export function exportCSS(s:Settings) { return `/* Pixel Foundry · ${s.preset} · ${s.dark?'dark':'light'}\n * Semantic tokens compatible with shadcn/ui.\n * Add pixel-foundry.css and the React recipes for pixel geometry. */\n:root {\n${Object.entries(tokens(s)).map(([k,v])=>`  ${k}: ${v};`).join('\n')}\n  color-scheme: ${s.dark?'dark':'light'};\n}\n`; }
 
+/** On-screen size of the pixel cursors in CSS pixels. The art is a 16×16 grid. */
+const CURSOR_SIZE = 24;
+
 function cursorTokens(enabled:boolean,fill:string,ink:string):Record<string,string> {
  const shapes:Record<string,string>={arrow:'M1 1h2v2h2v2h2v2h2v2h2v2H7v4H5v-4H3v2H1z',pointer:'M6 1h3v5h2V5h2v2h2v6h-2v2H6v-2H4v-2H2V8h3v2h1z',text:'M4 1h8v2H9v10h3v2H4v-2h3V3H4z',grab:'M3 4h2V2h2v2h2V2h2v2h2v2h2v6h-2v3H5v-2H3V9H1V6h2z',blocked:'M2 2h12v12H2z M4 4v8h8V4z M4 5h2v2h2v2h2v2h2'};
+ // Click point of each cursor on the 16×16 grid: arrow tip, fingertip, I-beam center.
+ const hotspots:Record<string,[number,number]>={arrow:[1,1],pointer:[7,1],text:[8,8],grab:[1,1],blocked:[1,1]};
  const fallbacks:Record<string,string>={arrow:'auto',pointer:'pointer',text:'text',grab:'grab',blocked:'not-allowed'};
+ const scale=CURSOR_SIZE/16;
  return Object.fromEntries(Object.entries(shapes).map(([name,path])=>{
- const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges"><path d="${path}" fill="${fill}" fill-rule="evenodd" stroke="${ink}" stroke-width="1" stroke-linejoin="miter"/></svg>`;
- return [`--cursor-${name}`,enabled?`url("data:image/svg+xml,${encodeURIComponent(svg)}") ${name==='pointer'?'14 2':name==='text'?'16 16':'2 2'}, ${fallbacks[name]}`:fallbacks[name]];
+ const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="${CURSOR_SIZE}" height="${CURSOR_SIZE}" viewBox="0 0 16 16" shape-rendering="crispEdges"><path d="${path}" fill="${fill}" fill-rule="evenodd" stroke="${ink}" stroke-width="1" stroke-linejoin="miter"/></svg>`;
+ const hotspot=hotspots[name].map((v)=>Math.round(v*scale)).join(' ');
+ return [`--cursor-${name}`,enabled?`url("data:image/svg+xml,${encodeURIComponent(svg)}") ${hotspot}, ${fallbacks[name]}`:fallbacks[name]];
  }));
 }
 
