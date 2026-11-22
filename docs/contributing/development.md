@@ -138,11 +138,13 @@ To add or change a demo:
    npm run typecheck
    ```
 
-3. Publish a new version of the integration. This needs a GitBook personal access token from an organization member, set once with `npx gitbook auth`:
+3. Publish a new version of the integration. This needs a GitBook personal access token from an organization member, set once with `npx gitbook auth`. It also needs the organization's ID, the `<id>` in `app.gitbook.com/o/<id>/` (or run `npx gitbook organizations list`). The ID is kept out of the repo, so pass it when publishing:
 
    ```bash
-   npm run publish-integration
+   GITBOOK_ORGANIZATION=<id> npm run publish-integration
    ```
+
+   Publishing stops with a message if `GITBOOK_ORGANIZATION` is not set. The `organization` value in `gitbook-manifest.yaml` is only a placeholder that this variable replaces.
 
 4. Add `{% @pixel-foundry/demo demo="<id>" %}` to the page.
 

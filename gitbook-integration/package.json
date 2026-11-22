@@ -7,7 +7,7 @@
     "build": "node scripts/build-frames.mjs",
     "preview": "node scripts/build-frames.mjs && node scripts/preview.mjs",
     "typecheck": "node scripts/build-frames.mjs && tsc -p tsconfig.json && tsc -p frame/tsconfig.json",
-    "publish-integration": "node scripts/build-frames.mjs && gitbook integration publish"
+    "publish-integration": "node scripts/require-organization.mjs && node scripts/build-frames.mjs && gitbook integration publish"
   },
   "dependencies": {
     "@gitbook/api": "^0.212.0",
