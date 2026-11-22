@@ -1,0 +1,83 @@
+# Starts a release. Run it from the Actions tab and pick a version bump.
+#
+# It bumps the version in package.json and package-lock.json, turns the
+# changelog's "## Unreleased" heading into "## <version> (<date>)", pushes the
+# result to a release-<version> branch and opens a "Release <version>" pull
+# request. Merging that pull request publishes the release (see publish.yml).
+#
+# Opening the pull request needs "Allow GitHub Actions to create and approve
+# pull requests" (Settings → Actions → General). Without it, the run summary
+# links to a page where you can open the pull request with one click.
+
+name: Prepare release
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: Version bump
+        type: choice
+        options: [patch, minor, major]
+        default: patch
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: prepare-release
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Bump the version and date the changelog
+        id: bump
+        env:
+          BUMP: ${{ inputs.bump }}
+        run: node scripts/prepare-release.mjs "$BUMP"
+
+      - name: Push the release branch
+        env:
+          VERSION: ${{ steps.bump.outputs.version }}
+        run: |
+          branch="release-$VERSION"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add package.json package-lock.json docs/contributing/changelog.md
+          git commit -m "Release $VERSION"
+          git push origin "$branch"
+
+      - name: Open the release pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.bump.outputs.version }}
+        run: |
+          branch="release-$VERSION"
+          {
+            echo "Bumps the package to **$VERSION** and dates its changelog entry."
+            echo
+            node scripts/release-notes.mjs "$VERSION"
+            echo
+            echo "Merging publishes $VERSION to npm after approval in the \`production\` environment, then tags \`v$VERSION\` and creates the GitHub Release."
+          } > body.md
+          if url=$(gh pr create --base main --head "$branch" --title "Release $VERSION" --body-file body.md); then
+            echo "Release pull request: $url" >> "$GITHUB_STEP_SUMMARY"
+          else
+            compare="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/compare/main...$branch?expand=1"
+            echo "::notice::Pushed $branch. Open the release pull request at $compare"
+            {
+              echo "Pushed \`$branch\`. GitHub Actions isn't allowed to open pull requests in this repository,"
+              echo "so open it here: $compare"
+              echo
+              echo "Use the title **Release $VERSION**."
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
