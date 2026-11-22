@@ -69,15 +69,30 @@ npm install ../pixel-foundry/ai-atlaas-pixel-foundry-0.1.0.tgz
 
 ## Publishing
 
-```bash
-npm version patch   # or minor / major
-npm login
-npm publish
-```
+Releases publish to npm automatically. Publishing a GitHub Release runs `.github/workflows/publish.yml`, which installs dependencies and runs `npm publish`. `prepublishOnly` type-checks, builds and tests the package first, so a failing check stops the release.
 
-`prepublishOnly` runs the typecheck, build and tests first.
+The workflow uses npm **trusted publishing**: npm verifies the workflow through GitHub's OIDC token, so no npm token is stored in the repository. The trusted publisher is configured in the package's settings on npmjs.com, for the `AI-Atlaas/pixel-foundry` repository and the `publish.yml` workflow. If the workflow file is renamed, update that setting too.
 
-The package is published under the **AI Atlaas** npm organization as `@ai-atlaas/pixel-foundry`. To publish, your npm account must be a member of the `ai-atlaas` organization with permission to publish. `publishConfig.access` is set to `public` in `package.json`, because scoped packages are private by default.
+To release a new version:
+
+1. Bump the version. This updates `package.json` and `package-lock.json`, and creates a commit and a tag such as `v0.2.0`:
+
+   ```bash
+   npm version minor   # or patch / major
+   ```
+
+2. Push the commit and the tag:
+
+   ```bash
+   git push --follow-tags
+   ```
+
+3. On GitHub, create a release from the new tag and publish it. Write the release notes there, and add them to the [Changelog](changelog.md).
+4. Watch the **Publish to npm** run in the repository's **Actions** tab.
+
+The workflow stops if the release tag doesn't match the version in `package.json`, so a release can't publish the wrong version. A version number can never be reused on npm, and a version can only be unpublished within 72 hours.
+
+The package is published under the **AI Atlaas** npm organization as `@ai-atlaas/pixel-foundry`. `publishConfig.access` is set to `public` in `package.json`, because scoped packages are private by default.
 
 ## Docs
 
