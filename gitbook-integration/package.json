@@ -14,7 +14,7 @@
     "@gitbook/runtime": "^0.26.1"
   },
   "devDependencies": {
-    "@ai-atlaas/pixel-foundry": "0.1.1",
+    "@ai-atlaas/pixel-foundry": "0.1.2",
     "@base-ui/react": "^1.7.0",
     "@cloudflare/workers-types": "^4.20260702.1",
     "@gitbook/cli": "^0.33.6",
