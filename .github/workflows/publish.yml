@@ -2,7 +2,8 @@
 #
 # Authentication uses npm trusted publishing (OIDC): no npm token is stored in
 # GitHub. The package's trusted publisher on npmjs.com must name this file,
-# "publish.yml", in the AI-Atlaas/pixel-foundry repository.
+# "publish.yml", in the AI-Atlaas/pixel-foundry repository, with the
+# "production" environment used by the job below.
 
 name: Publish to npm
 
@@ -21,6 +22,10 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    # Must match the environment in the npm trusted publisher settings.
+    environment:
+      name: production
+      url: https://www.npmjs.com/package/@ai-atlaas/pixel-foundry
     steps:
       - uses: actions/checkout@v4
 

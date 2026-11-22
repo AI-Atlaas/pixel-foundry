@@ -1,5 +1,7 @@
 # Pixel Foundry
 
+[![npm version](https://img.shields.io/npm/v/@ai-atlaas/pixel-foundry)](https://www.npmjs.com/package/@ai-atlaas/pixel-foundry)
+
 **A pixel-art design system for React, built on [Base UI](https://base-ui.com).**
 
 Crisp pixel borders, hard offset shadows, bitmap icons and cursors, and a pixel display font, on top of accessible, unstyled Base UI primitives. Includes 31 components, 5 palettes with light and dark modes, and shadcn-compatible design tokens.

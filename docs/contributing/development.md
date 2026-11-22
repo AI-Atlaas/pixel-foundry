@@ -71,7 +71,9 @@ npm install ../pixel-foundry/ai-atlaas-pixel-foundry-0.1.0.tgz
 
 Releases publish to npm automatically. Publishing a GitHub Release runs `.github/workflows/publish.yml`, which installs dependencies and runs `npm publish`. `prepublishOnly` type-checks, builds and tests the package first, so a failing check stops the release.
 
-The workflow uses npm **trusted publishing**: npm verifies the workflow through GitHub's OIDC token, so no npm token is stored in the repository. The trusted publisher is configured in the package's settings on npmjs.com, for the `AI-Atlaas/pixel-foundry` repository and the `publish.yml` workflow. If the workflow file is renamed, update that setting too.
+The workflow uses npm **trusted publishing**: npm verifies the workflow through GitHub's OIDC token, so no npm token is stored in the repository. The trusted publisher is configured in the package's settings on npmjs.com, for the `AI-Atlaas/pixel-foundry` repository, the `publish.yml` workflow and the `production` environment. The workflow's job runs in the GitHub environment `production` to match. If the workflow file or the environment is renamed, update that setting too.
+
+You can add protection rules to the `production` environment in the repository's **Settings → Environments**, for example a required reviewer, so each publish waits for approval.
 
 To release a new version:
 
