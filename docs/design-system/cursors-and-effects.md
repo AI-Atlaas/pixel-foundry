@@ -6,7 +6,7 @@ description: Pixel cursors and click sparks.
 
 ## Pixel cursors
 
-Pixel Foundry includes five bitmap cursors, drawn as 16×16 SVGs in the current palette's accent and ink colors:
+Pixel Foundry includes five bitmap cursors, drawn as 16×16 SVGs in the current palette's accent and ink colors and shown at 24×24 pixels:
 
 | Cursor | Where it appears |
 | --- | --- |

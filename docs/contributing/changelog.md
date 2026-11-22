@@ -4,6 +4,12 @@ description: Release history.
 
 # Changelog
 
+## Unreleased
+
+**Changed**
+
+* Pixel cursors are smaller: 24×24 pixels instead of 32×32. Their click points stay on the arrow tip, the fingertip and the center of the I-beam.
+
 ## 0.1.1 (2026-11-22)
 
 No changes to components, styles or themes.
