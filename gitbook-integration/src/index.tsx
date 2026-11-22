@@ -5,10 +5,13 @@
 // and deployed by the "Deploy demos" workflow). The block reads the demo list
 // from there, so new or changed demos appear without publishing the
 // integration again.
+//
+// GitBook only accepts resize messages from frames on its own integration
+// domains, so the block doesn't embed Pages directly. It embeds a small relay
+// page served by this integration, which embeds the demo from Pages and passes
+// its resize and ready messages up to GitBook.
 import { createComponent, createIntegration } from '@gitbook/runtime';
-
-/** Where GitHub Pages serves the demos. */
-const DEMOS_URL = 'https://ai-atlaas.github.io/pixel-foundry/';
+import { DEMOS_URL, RELAY_PAGE } from './relay';
 
 // Assumed block width before the frame reports its real size.
 const STARTING_WIDTH = 720;
@@ -32,7 +35,7 @@ async function loadDemoList(): Promise<DemoList | null> {
 const demoBlock = createComponent<{ demo?: string }, { demo: string }>({
   componentId: 'demo',
   initialState: (props) => ({ demo: props.demo || 'button' }),
-  async render(element) {
+  async render(element, { environment }) {
     const list = await loadDemoList();
     const id = element.state.demo;
     const info = list?.demos.find((d) => d.id === id) ?? { id, title: id, height: FALLBACK_HEIGHT };
@@ -41,7 +44,8 @@ const demoBlock = createComponent<{ demo?: string }, { demo: string }>({
     // Re-read the demo list hourly, or soon if Pages couldn't be reached.
     element.setCache({ maxAge: list ? 3600 : 60 });
 
-    const url = new URL('frame.html', DEMOS_URL);
+    // The relay page passes this query on to frame.html on Pages.
+    const url = new URL(`${environment.integration.urls.publicContentEndpoint}/frame`);
     url.searchParams.set('demo', info.id);
     if (list) url.searchParams.set('v', list.build);
 
@@ -70,5 +74,13 @@ const demoBlock = createComponent<{ demo?: string }, { demo: string }>({
 });
 
 export default createIntegration({
+  fetch: async (request) => {
+    if (new URL(request.url).pathname.endsWith('/frame')) {
+      return new Response(RELAY_PAGE, {
+        headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'public, max-age=86400' },
+      });
+    }
+    return new Response('Not found', { status: 404 });
+  },
   components: [demoBlock],
 });
