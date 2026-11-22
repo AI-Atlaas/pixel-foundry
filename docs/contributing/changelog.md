@@ -4,6 +4,12 @@ description: Release history.
 
 # Changelog
 
+## 0.1.1 (2026-11-22)
+
+No changes to components, styles or themes.
+
+* Releases now publish to npm from GitHub Actions with npm trusted publishing, so each version carries a provenance statement.
+
 ## 0.1.0 (2026-11-18)
 
 First release as a standalone npm package, extracted from the Pixel Foundry playground.
