@@ -4,7 +4,7 @@ description: A confirmation dialog for destructive actions.
 
 # Alert dialog
 
-![An alert dialog asking Delete this listing? with Cancel and Delete](../.gitbook/assets/components/alert-dialog.png)
+{% @pixel-foundry/demo demo="alert-dialog" %}
 
 A confirmation dialog for destructive actions. It renders its own trigger button. Focus starts on **Cancel**, so a stray <kbd>Enter</kbd> can't confirm by accident.
 

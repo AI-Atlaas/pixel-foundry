@@ -4,7 +4,7 @@ description: A button that shows a toast notification.
 
 # Toast
 
-![A Save search button and the Search saved toast](../.gitbook/assets/components/toast.png)
+{% @pixel-foundry/demo demo="toast" %}
 
 A button that shows a toast notification. Only one toast is shown at a time, and it hides after 6 seconds.
 

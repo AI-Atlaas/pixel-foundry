@@ -4,7 +4,7 @@ description: A small panel attached to a trigger button.
 
 # Popover
 
-![A Ranking popover open below its trigger](../.gitbook/assets/components/popover.png)
+{% @pixel-foundry/demo demo="popover" %}
 
 A small panel attached to a trigger button with an info icon.
 

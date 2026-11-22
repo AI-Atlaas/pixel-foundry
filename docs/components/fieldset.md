@@ -4,7 +4,7 @@ description: Groups related fields under a legend.
 
 # Fieldset
 
-![A Shipping fieldset with a switch and a checkbox](../.gitbook/assets/components/fieldset.png)
+{% @pixel-foundry/demo demo="fieldset" %}
 
 Groups related fields under a legend. Setting `disabled` disables every control inside.
 

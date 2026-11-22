@@ -4,7 +4,7 @@ description: A row of icon buttons with arrow-key navigation.
 
 # Toolbar
 
-![A toolbar with copy, save, share and download icon buttons](../.gitbook/assets/components/toolbar.png)
+{% @pixel-foundry/demo demo="toolbar" %}
 
 A row of icon buttons with arrow-key navigation between them.
 

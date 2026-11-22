@@ -4,7 +4,7 @@ description: A free-text input with suggestions.
 
 # Autocomplete
 
-![A Search tools input showing three suggestions](../.gitbook/assets/components/autocomplete.png)
+{% @pixel-foundry/demo demo="autocomplete" %}
 
 A free-text input with suggestions. Unlike a combobox, any text is a valid value.
 

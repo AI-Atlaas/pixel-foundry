@@ -4,7 +4,7 @@ description: An on/off switch with a visible label.
 
 # Switch
 
-![Sound effects switch on and Music switch off](../.gitbook/assets/components/switch.png)
+{% @pixel-foundry/demo demo="switch" %}
 
 ## Import
 

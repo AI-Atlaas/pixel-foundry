@@ -4,7 +4,7 @@ description: A desktop-style menu bar.
 
 # Menubar
 
-![A File, View, Help menubar with the File menu open](../.gitbook/assets/components/menubar.png)
+{% @pixel-foundry/demo demo="menubar" %}
 
 A desktop-style menu bar. Use the arrow keys to move between menus and items.
 

@@ -4,7 +4,7 @@ description: The Icon component and the available icon names.
 
 # Icons
 
-![All 23 built-in icons with their names](../.gitbook/assets/components/icon.png)
+{% @pixel-foundry/demo demo="icons" %}
 
 `Icon` renders a [Pixelarticons](https://pixelarticons.com) icon. The icon inherits the current text color.
 

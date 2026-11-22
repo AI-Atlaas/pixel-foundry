@@ -4,7 +4,7 @@ description: A searchable single-select with a clear button.
 
 # Combobox
 
-![A Category combobox open, with Design highlighted](../.gitbook/assets/components/combobox.png)
+{% @pixel-foundry/demo demo="combobox" %}
 
 A searchable single-select with a clear button. The list filters as you type, and only listed values can be chosen.
 

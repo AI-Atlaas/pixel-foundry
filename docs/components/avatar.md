@@ -4,7 +4,7 @@ description: An image with an initials fallback.
 
 # Avatar
 
-![Two initials avatars next to a product name](../.gitbook/assets/components/avatar.png)
+{% @pixel-foundry/demo demo="avatar" %}
 
 Shows an image, or the initials if there's no image or it fails to load.
 

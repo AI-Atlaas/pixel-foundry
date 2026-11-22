@@ -4,7 +4,7 @@ description: A link that shows a preview card on hover or focus.
 
 # Preview card
 
-![A Moss Notes link with its preview card open](../.gitbook/assets/components/preview-card.png)
+{% @pixel-foundry/demo demo="preview-card" %}
 
 A link that shows a preview card when hovered or focused.
 

@@ -4,7 +4,7 @@ description: A side panel that slides in from the right.
 
 # Drawer
 
-![A Filter results drawer open over a dimmed page](../.gitbook/assets/components/drawer.png)
+{% @pixel-foundry/demo demo="drawer" %}
 
 A side panel that slides in from the right and can be swiped closed on touch devices. It renders its own trigger button.
 

@@ -12,7 +12,7 @@ import { PixelButton, PixelSelect, PixelDrawer } from '@ai-atlaas/pixel-foundry'
 
 ## Catalog
 
-Every component has its own page with a screenshot, usage example and props table.
+Every component has its own page with a live demo, usage example and props table.
 
 | Group | Components |
 | --- | --- |

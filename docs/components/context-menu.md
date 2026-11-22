@@ -4,7 +4,7 @@ description: A right-click menu with a keyboard-accessible menu button.
 
 # Context menu
 
-![A card with its context menu open and a Listing actions button](../.gitbook/assets/components/context-menu.png)
+{% @pixel-foundry/demo demo="context-menu" %}
 
 Shows a menu on right-click or long-press of its children. Right-click can't be reached by keyboard or by everyone on touch, so the component also renders a regular menu button with the same actions.
 

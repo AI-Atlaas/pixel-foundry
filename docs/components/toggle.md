@@ -4,7 +4,7 @@ description: A single on/off button for actions like save or follow.
 
 # Toggle
 
-![A pressed Save toggle next to an unpressed Follow toggle](../.gitbook/assets/components/toggle.png)
+{% @pixel-foundry/demo demo="toggle" %}
 
 A single on/off button with a heart icon, for actions like "save" or "favorite".
 

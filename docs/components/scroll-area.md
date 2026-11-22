@@ -4,7 +4,7 @@ description: A scroll container with a pixel scrollbar.
 
 # Scroll area
 
-![A Changelog scroll area with its scrollbar](../.gitbook/assets/components/scroll-area.png)
+{% @pixel-foundry/demo demo="scroll-area" %}
 
 A scroll container with a pixel scrollbar. Give it a height with CSS.
 

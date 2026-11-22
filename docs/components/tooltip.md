@@ -4,7 +4,7 @@ description: An icon button with a tooltip.
 
 # Tooltip
 
-![A heart icon button with a Save to your shortlist tooltip](../.gitbook/assets/components/tooltip.png)
+{% @pixel-foundry/demo demo="tooltip" %}
 
 An icon button with a tooltip. The tooltip text describes the button, and `label` is its accessible name.
 

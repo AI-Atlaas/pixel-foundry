@@ -4,7 +4,7 @@ description: A labelled checkbox. The whole row is clickable.
 
 # Checkbox
 
-![Checked, unchecked and disabled checkboxes](../.gitbook/assets/components/checkbox.png)
+{% @pixel-foundry/demo demo="checkbox" %}
 
 ## Import
 

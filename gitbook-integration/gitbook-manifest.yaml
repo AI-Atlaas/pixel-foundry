@@ -1,0 +1,30 @@
+# GitBook integration that adds a "Pixel Foundry demo" block: a live,
+# interactive component demo served by the integration itself.
+#
+# Publish with `npm run publish-integration` after `gitbook auth`.
+# In Markdown (Git Sync) a block is written as:
+#   {% @pixel-foundry/demo demo="button" %}
+name: pixel-foundry
+title: Pixel Foundry
+description: Live, interactive Pixel Foundry component demos for your docs.
+summary: |
+    # Overview
+
+    Adds a "Pixel Foundry demo" block that shows a live Pixel Foundry
+    component you can click, type into and open, right on the page.
+
+    # How it works
+
+    Insert the block from the ( ⌘ + / ) menu and pick a demo from its menu.
+    The demo runs in a frame served by this integration, with a light and
+    dark toggle in the corner.
+# GitBook organization that owns the integration (the ID in app.gitbook.com/o/<id>/).
+organization: set-with-GITBOOK_ORGANIZATION
+visibility: private
+target: space
+script: ./src/index.tsx
+scopes: []
+blocks:
+    - id: demo
+      title: Pixel Foundry demo
+      description: A live, interactive Pixel Foundry component.

@@ -4,7 +4,7 @@ description: A two-thumb slider for a range of money.
 
 # Range slider
 
-![A Monthly budget range slider from $40 to $200](../.gitbook/assets/components/range-slider.png)
+{% @pixel-foundry/demo demo="range-slider" %}
 
 A two-thumb slider for a range of money. The values are formatted as currency.
 

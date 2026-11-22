@@ -4,7 +4,7 @@ description: Small status labels, styled with the px-badge class.
 
 # Badge
 
-![Default, success and warning badges](../.gitbook/assets/components/badge.png)
+{% @pixel-foundry/demo demo="badge" %}
 
 Badges are a CSS class, not a component.
 

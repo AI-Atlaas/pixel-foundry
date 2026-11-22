@@ -1,0 +1,28 @@
+{
+  "name": "pixel-foundry-gitbook-integration",
+  "private": true,
+  "type": "module",
+  "description": "GitBook integration that adds live Pixel Foundry demo blocks to the docs.",
+  "scripts": {
+    "build": "node scripts/build-frames.mjs",
+    "preview": "node scripts/build-frames.mjs && node scripts/preview.mjs",
+    "typecheck": "node scripts/build-frames.mjs && tsc -p tsconfig.json && tsc -p frame/tsconfig.json",
+    "publish-integration": "node scripts/build-frames.mjs && gitbook integration publish"
+  },
+  "dependencies": {
+    "@gitbook/api": "^0.212.0",
+    "@gitbook/runtime": "^0.26.1"
+  },
+  "devDependencies": {
+    "@ai-atlaas/pixel-foundry": "0.1.1",
+    "@base-ui/react": "^1.7.0",
+    "@cloudflare/workers-types": "^4.20260702.1",
+    "@gitbook/cli": "^0.33.6",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "esbuild": "^0.28.2",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "typescript": "^5.9.3"
+  }
+}

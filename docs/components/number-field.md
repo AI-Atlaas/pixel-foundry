@@ -4,7 +4,7 @@ description: A number input with minus and plus buttons.
 
 # Number field
 
-![A Seats number field set to 5 with its range hint](../.gitbook/assets/components/number-field.png)
+{% @pixel-foundry/demo demo="number-field" %}
 
 A number input with − and + buttons and a hint showing the allowed range.
 

@@ -4,7 +4,7 @@ description: A controlled radio group with a visible group label.
 
 # Radio group
 
-![A Billing radio group with Yearly selected](../.gitbook/assets/components/radio-group.png)
+{% @pixel-foundry/demo demo="radio-group" %}
 
 A controlled radio group with a visible group label.
 

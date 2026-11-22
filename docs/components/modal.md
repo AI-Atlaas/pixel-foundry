@@ -4,7 +4,7 @@ description: A controlled dialog with a title, description and close button.
 
 # Modal
 
-![An open modal titled Ready for a new adventure?](../.gitbook/assets/components/modal.png)
+{% @pixel-foundry/demo demo="modal" %}
 
 A controlled dialog with a title, an optional description and a close button.
 

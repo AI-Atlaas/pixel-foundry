@@ -41,6 +41,7 @@ Requires Node.js 20 or newer.
 ├── scripts/build-styles.mjs
 ├── test/theme.test.mjs
 ├── docs/                 this GitBook documentation
+├── gitbook-integration/  the GitBook integration behind the live demos
 └── tsup.config.ts
 ```
 
@@ -49,8 +50,8 @@ Requires Node.js 20 or newer.
 1. Write the wrapper in `src/extras.tsx`. Compose Base UI parts and apply `px-*` classes, and require a `label` or `children` for the accessible name.
 2. Add any new styles to `styles/components.css`. Use tokens (`var(--primary)`, `var(--pixel)`, …), never hard-coded colors.
 3. Run `npm run typecheck && npm run build`.
-4. Add a page for it in `docs/components/`, for example `docs/components/date-field.md`. Follow the existing pages: a screenshot, then **Import**, **Usage** and **Props** sections.
-5. Add the screenshot to `docs/.gitbook/assets/components/`, using the same file name as the page.
+4. Add a page for it in `docs/components/`, for example `docs/components/date-field.md`. Follow the existing pages: a live demo, then **Import**, **Usage** and **Props** sections.
+5. Add a demo for it, as described in [Live demos](#live-demos), once the component is in a published release.
 6. Link the page in `docs/SUMMARY.md` (components are listed alphabetically) and in the catalog in `docs/components/README.md`.
 
 ## Adding or changing a palette
@@ -101,3 +102,48 @@ The package is published under the **AI Atlaas** npm organization as `@ai-atlaas
 The `docs/` folder is synced to GitBook with site-wide **Git Sync**, using `docs/` as the Project directory. `docs/gitbook-docs.yaml` describes the site's sections and maps the Pixel Foundry space to the `docs/` folder. `docs/README.md` is the home page and `docs/SUMMARY.md` defines the navigation.
 
 Edits made in GitBook come back as commits on `main`, so pull before editing the docs locally.
+
+## Live demos
+
+Each component page starts with a live demo. The demos come from a GitBook integration in `gitbook-integration/`, published privately to the GitBook organization that owns these docs, under the name `pixel-foundry`. It adds a **Pixel Foundry demo** block. The block shows a frame that the integration serves from GitBook's own hosting, with the compiled demo, React, Base UI, the package's CSS and its fonts. Nothing is installed or built when a page opens.
+
+In Markdown, a block is one line, where `demo` is the demo's id:
+
+```
+{% @pixel-foundry/demo demo="select" %}
+```
+
+In the GitBook editor, insert it from the ( ⌘ + / ) menu and pick the demo from the block's menu.
+
+The demos use the **published** package. `gitbook-integration/package.json` pins `@ai-atlaas/pixel-foundry` to an exact version, so the demos show what people can install.
+
+| Path in `gitbook-integration/` | What it is |
+| --- | --- |
+| `frame/demos/<id>.tsx` | One demo per file. Each default-exports a small React component. |
+| `frame/demos/demos.json` | The demo list: `id`, menu `title`, minimum frame `height` in pixels (room for its popup), and `top: true` to pin popup demos near the top. |
+| `frame/main.tsx`, `frame/frame.css` | The page inside the frame: the light/dark toggle, auto-height, and layout helpers such as `demo-row`, `demo-stack` and `demo-wide`. |
+| `src/index.tsx` | The GitBook block. |
+| `src/serve.ts` | Serves the frame page and its assets. |
+| `scripts/build-frames.mjs` | Compiles the frame into `src/generated/` (ignored by Git). |
+
+To add or change a demo:
+
+1. Write `frame/demos/<id>.tsx` and add it to `frame/demos/demos.json`.
+2. Check it locally. This serves every demo on a stand-in page that sizes each frame the way GitBook does:
+
+   ```bash
+   cd gitbook-integration
+   npm install
+   npm run preview      # http://localhost:5182/
+   npm run typecheck
+   ```
+
+3. Publish a new version of the integration. This needs a GitBook personal access token from an organization member, set once with `npx gitbook auth`:
+
+   ```bash
+   npm run publish-integration
+   ```
+
+4. Add `{% @pixel-foundry/demo demo="<id>" %}` to the page.
+
+After a package release, bump the pinned version in `gitbook-integration/package.json`, run `npm install`, and publish the integration again.

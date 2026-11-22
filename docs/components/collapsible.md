@@ -4,7 +4,7 @@ description: A button that shows and hides a panel.
 
 # Collapsible
 
-![An open Show details collapsible](../.gitbook/assets/components/collapsible.png)
+{% @pixel-foundry/demo demo="collapsible" %}
 
 A button that shows and hides a panel.
 

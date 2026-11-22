@@ -1,0 +1,96 @@
+/* Layout for the demo frame, loaded after the Pixel Foundry styles. */
+
+html,
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.frame-root {
+  position: relative;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  padding: 40px 24px 24px;
+}
+
+.frame-top {
+  align-content: start;
+}
+
+.frame-stage {
+  max-width: 100%;
+}
+
+.frame-mode {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 6px;
+  line-height: 0;
+}
+
+.frame-missing {
+  font-family: var(--font-mono, monospace);
+  font-size: 14px;
+}
+
+/* Helpers used by the demo files. */
+
+.demo-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.demo-stack {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+}
+
+.demo-note {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+/* A fixed width for demos whose parts stretch to fill their container
+   (sliders, meters, progress, accordion). Uses the viewport, not %, because
+   the stage shrinks to fit its content. */
+.demo-wide {
+  width: min(420px, calc(100vw - 48px));
+}
+
+.demo-stack.demo-wide {
+  justify-items: stretch;
+}
+
+.frame-stage h3 {
+  margin: 0;
+}
+
+.demo-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 16px 12px;
+  width: min(640px, calc(100vw - 48px));
+}
+
+.demo-icons figure {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.demo-icons figcaption {
+  font-size: 11px;
+  opacity: 0.75;
+}

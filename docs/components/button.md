@@ -4,7 +4,7 @@ description: A button with a pixel border and a hard shadow.
 
 # Button
 
-![Buttons in primary, secondary, outline, ghost and disabled styles](../.gitbook/assets/components/button.png)
+{% @pixel-foundry/demo demo="button" %}
 
 A button with a pixel border and a hard shadow. When pressed, it moves into its own shadow.
 

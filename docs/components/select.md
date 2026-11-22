@@ -4,7 +4,7 @@ description: A dropdown select with full keyboard support.
 
 # Select
 
-![A Character class select open, with Mage selected](../.gitbook/assets/components/select.png)
+{% @pixel-foundry/demo demo="select" %}
 
 A controlled dropdown select with full keyboard support.
 

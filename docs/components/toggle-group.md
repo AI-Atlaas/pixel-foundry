@@ -4,7 +4,7 @@ description: A row of toggle buttons for quick filters.
 
 # Toggle group
 
-![A Pricing toggle group with Free pressed](../.gitbook/assets/components/toggle-group.png)
+{% @pixel-foundry/demo demo="toggle-group" %}
 
 A row of toggle buttons, for quick filters for example. Only one button can be pressed at a time (Base UI's default), and the value is reported as an array. Arrow keys move between buttons.
 

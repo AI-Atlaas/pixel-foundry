@@ -4,7 +4,7 @@ description: A measured value within a known range.
 
 # Meter
 
-![Rating and Storage meters](../.gitbook/assets/components/meter.png)
+{% @pixel-foundry/demo demo="meter" %}
 
 Shows a measured value within a known range, such as a rating or storage used. For task progress, use Base UI's `Progress` instead (see [Styling raw Base UI parts](styling-base-ui.md#progress)).
 

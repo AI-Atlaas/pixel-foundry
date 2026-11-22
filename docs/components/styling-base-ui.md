@@ -34,6 +34,8 @@ Every wrapper is built from Base UI parts plus `px-*` classes. You can do the sa
 
 ## Tabs
 
+{% @pixel-foundry/demo demo="tabs" %}
+
 ```tsx
 import { Tabs } from '@base-ui/react/tabs';
 
@@ -49,6 +51,8 @@ import { Tabs } from '@base-ui/react/tabs';
 
 ## Accordion
 
+{% @pixel-foundry/demo demo="accordion" %}
+
 ```tsx
 import { Accordion } from '@base-ui/react/accordion';
 
@@ -63,6 +67,8 @@ import { Accordion } from '@base-ui/react/accordion';
 ```
 
 ## Menu
+
+{% @pixel-foundry/demo demo="menu" %}
 
 ```tsx
 import { Menu } from '@base-ui/react/menu';
@@ -84,6 +90,8 @@ import { Icon } from '@ai-atlaas/pixel-foundry';
 ```
 
 ## Progress
+
+{% @pixel-foundry/demo demo="progress" %}
 
 ```tsx
 import { Progress } from '@base-ui/react/progress';

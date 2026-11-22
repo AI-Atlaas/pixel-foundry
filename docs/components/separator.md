@@ -4,7 +4,7 @@ description: A horizontal or vertical divider.
 
 # Separator
 
-![A horizontal separator and vertical separators between items](../.gitbook/assets/components/separator.png)
+{% @pixel-foundry/demo demo="separator" %}
 
 ## Import
 

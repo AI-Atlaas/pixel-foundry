@@ -4,7 +4,7 @@ description: A single-value slider with a live value label.
 
 # Slider
 
-![A Power level slider set to 68](../.gitbook/assets/components/slider.png)
+{% @pixel-foundry/demo demo="slider" %}
 
 ## Import
 

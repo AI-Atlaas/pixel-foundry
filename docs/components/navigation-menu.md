@@ -4,7 +4,7 @@ description: Site navigation with dropdown panels of links.
 
 # Navigation menu
 
-![A navigation menu with the Discover panel open](../.gitbook/assets/components/navigation-menu.png)
+{% @pixel-foundry/demo demo="navigation-menu" %}
 
 Site navigation with dropdown panels of links, suited to a landing-page header.
 

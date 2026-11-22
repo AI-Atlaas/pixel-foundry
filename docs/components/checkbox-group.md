@@ -4,7 +4,7 @@ description: A labelled list of checkboxes that share one array value.
 
 # Checkbox group
 
-![A Platforms checkbox group with Web and Android checked](../.gitbook/assets/components/checkbox-group.png)
+{% @pixel-foundry/demo demo="checkbox-group" %}
 
 A labelled list of checkboxes that share one array value.
 

@@ -4,7 +4,7 @@ description: Text inputs styled with the px-input class.
 
 # Input
 
-![A Player name input and an input in its error state](../.gitbook/assets/components/input.png)
+{% @pixel-foundry/demo demo="input" %}
 
 Pixel Foundry has no text input wrapper. Use Base UI's `Input` (or a plain `<input>`) with the `px-input` class.
 
