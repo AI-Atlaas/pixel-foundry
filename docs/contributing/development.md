@@ -38,7 +38,11 @@ Requires Node.js 20 or newer.
 ├── styles/
 │   ├── components.css    all component styles (becomes dist/styles.css)
 │   └── fonts/            font files + OFL licenses
-├── scripts/build-styles.mjs
+├── scripts/
+│   ├── build-styles.mjs      writes dist/styles.css, fonts and themes
+│   ├── prepare-release.mjs   bumps the version and dates the changelog
+│   └── release-notes.mjs     prints a version's changelog notes
+├── .github/workflows/    Prepare release, Publish to npm
 ├── test/theme.test.mjs
 ├── docs/                 this GitBook documentation
 ├── gitbook-integration/  the GitBook integration behind the live demos
@@ -70,30 +74,29 @@ npm install ../pixel-foundry/ai-atlaas-pixel-foundry-0.1.0.tgz
 
 ## Publishing
 
-Releases publish to npm automatically. Publishing a GitHub Release runs `.github/workflows/publish.yml`, which installs dependencies and runs `npm publish`. `prepublishOnly` type-checks, builds and tests the package first, so a failing check stops the release.
+Releases are automated with two workflows. `main` only accepts changes through pull requests, so each release is a pull request too.
 
-The workflow uses npm **trusted publishing**: npm verifies the workflow through GitHub's OIDC token, so no npm token is stored in the repository. The trusted publisher is configured in the package's settings on npmjs.com, for the `AI-Atlaas/pixel-foundry` repository, the `publish.yml` workflow and the `production` environment. The workflow's job runs in the GitHub environment `production` to match. If the workflow file or the environment is renamed, update that setting too.
+**While you work:** list each change under a `## Unreleased` heading at the top of the [Changelog](changelog.md), in the same pull request as the change. Add the heading if it isn't there. Those lines become the release notes.
 
-You can add protection rules to the `production` environment in the repository's **Settings → Environments**, for example a required reviewer, so each publish waits for approval.
+**To release:**
 
-To release a new version:
+1. In the repository's **Actions** tab, run **Prepare release** and pick `patch`, `minor` or `major`. It bumps the version in `package.json` and `package-lock.json`, renames `## Unreleased` to `## <version> (<date>)`, pushes a `release-<version>` branch and opens a `Release <version>` pull request. It stops without changing anything if the `## Unreleased` section is missing or empty.
+2. Review and merge the pull request.
+3. Merging starts **Publish to npm**. It sees that the version has no `v<version>` tag yet, waits for approval in the `production` environment, and publishes. Approve it from the run page (**Review deployments**).
+4. After the publish succeeds, the same run tags the commit `v<version>` and creates the GitHub Release, with the changelog section as its notes.
+5. Update the docs demos to the new version, as described in [Live demos](#live-demos).
 
-1. Bump the version. This updates `package.json` and `package-lock.json`, and creates a commit and a tag such as `v0.2.0`:
+Opening the pull request in step 1 needs **Allow GitHub Actions to create and approve pull requests** in **Settings → Actions → General**. Without it, the workflow still pushes the branch, and its run summary links to a page where you open the pull request with one click.
 
-   ```bash
-   npm version minor   # or patch / major
-   ```
+Both scripts the workflows use also run locally. `node scripts/prepare-release.mjs patch` makes the same changes to your working copy, and `node scripts/release-notes.mjs <version>` prints a version's notes.
 
-2. Push the commit and the tag:
+Publishing a GitHub Release by hand still works too: it publishes the release's tag, after checking that the tag matches the version in `package.json`.
 
-   ```bash
-   git push --follow-tags
-   ```
+`prepublishOnly` type-checks, builds and tests the package before uploading, so a failing check stops the release. A version number can never be reused on npm, and a version can only be unpublished within 72 hours.
 
-3. On GitHub, create a release from the new tag and publish it. Write the release notes there, and add them to the [Changelog](changelog.md).
-4. Watch the **Publish to npm** run in the repository's **Actions** tab.
+The workflow uses npm **trusted publishing**: npm verifies the workflow through GitHub's OIDC token, so no npm token is stored in the repository. The trusted publisher is configured in the package's settings on npmjs.com, for the `AI-Atlaas/pixel-foundry` repository, the `publish.yml` workflow and the `production` environment. The publish job runs in the GitHub environment `production` to match. If the workflow file or the environment is renamed, update that setting too.
 
-The workflow stops if the release tag doesn't match the version in `package.json`, so a release can't publish the wrong version. A version number can never be reused on npm, and a version can only be unpublished within 72 hours.
+The `production` environment has a required reviewer, set in **Settings → Environments**, so every publish waits for approval. Remove the reviewer there to publish without approval.
 
 The package is published under the **AI Atlaas** npm organization as `@ai-atlaas/pixel-foundry`. `publishConfig.access` is set to `public` in `package.json`, because scoped packages are private by default.
 
