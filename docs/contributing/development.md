@@ -42,10 +42,10 @@ Requires Node.js 20 or newer.
 │   ├── build-styles.mjs      writes dist/styles.css, fonts and themes
 │   ├── prepare-release.mjs   bumps the version and dates the changelog
 │   └── release-notes.mjs     prints a version's changelog notes
-├── .github/workflows/    Prepare release, Publish to npm
+├── .github/workflows/    Prepare release, Publish to npm, Deploy demos
 ├── test/theme.test.mjs
 ├── docs/                 this GitBook documentation
-├── gitbook-integration/  the GitBook integration behind the live demos
+├── gitbook-integration/  the live demos and the GitBook block that embeds them
 └── tsup.config.ts
 ```
 
@@ -83,14 +83,13 @@ Releases are automated with two workflows. `main` only accepts changes through p
 1. In the repository's **Actions** tab, run **Prepare release** and pick `patch`, `minor` or `major`. It bumps the version in `package.json` and `package-lock.json`, renames `## Unreleased` to `## <version> (<date>)`, pushes a `release-<version>` branch and opens a `Release <version>` pull request. It stops without changing anything if the `## Unreleased` section is missing or empty.
 2. Review and merge the pull request.
 3. Merging starts **Publish to npm**. It sees that the version has no `v<version>` tag yet, waits for approval in the `production` environment, and publishes. Approve it from the run page (**Review deployments**).
-4. After the publish succeeds, the same run tags the commit `v<version>` and creates the GitHub Release, with the changelog section as its notes.
-5. Update the docs demos to the new version, as described in [Live demos](#live-demos).
+4. After the publish succeeds, the same run tags the commit `v<version>`, creates the GitHub Release with the changelog section as its notes, and redeploys the docs demos with the new version (see [Live demos](#live-demos)).
 
 Opening the pull request in step 1 needs **Allow GitHub Actions to create and approve pull requests** in **Settings → Actions → General**. Without it, the workflow still pushes the branch, and its run summary links to a page where you open the pull request with one click.
 
 Both scripts the workflows use also run locally. `node scripts/prepare-release.mjs patch` makes the same changes to your working copy, and `node scripts/release-notes.mjs <version>` prints a version's notes.
 
-Publishing a GitHub Release by hand still works too: it publishes the release's tag, after checking that the tag matches the version in `package.json`.
+Publishing a GitHub Release by hand still works too: it publishes the release's tag, after checking that the tag matches the version in `package.json`. It doesn't redeploy the demos, so run **Deploy demos** from the Actions tab afterwards.
 
 `prepublishOnly` type-checks, builds and tests the package before uploading, so a failing check stops the release. A version number can never be reused on npm, and a version can only be unpublished within 72 hours.
 
@@ -108,7 +107,10 @@ Edits made in GitBook come back as commits on `main`, so pull before editing the
 
 ## Live demos
 
-Each component page starts with a live demo. The demos come from a GitBook integration in `gitbook-integration/`, published privately to the GitBook organization that owns these docs, under the name `pixel-foundry`. It adds a **Pixel Foundry demo** block. The block shows a frame that the integration serves from GitBook's own hosting, with the compiled demo, React, Base UI, the package's CSS and its fonts. Nothing is installed or built when a page opens.
+Each component page starts with a live demo. Two parts in `gitbook-integration/` make this work:
+
+* **The demos** are a small static site on GitHub Pages, at [ai-atlaas.github.io/pixel-foundry](https://ai-atlaas.github.io/pixel-foundry/). Each demo is a page with the compiled demo, React, Base UI, the package's CSS and its fonts. Nothing is installed or built when a docs page opens.
+* **The GitBook integration** `pixel-foundry` adds a **Pixel Foundry demo** block that embeds one of those pages. It's published privately to the GitBook organization that owns these docs. The block reads the demo list from Pages, so it only needs publishing again when the block itself changes.
 
 In Markdown, a block is one line, where `demo` is the demo's id:
 
@@ -118,21 +120,20 @@ In Markdown, a block is one line, where `demo` is the demo's id:
 
 In the GitBook editor, insert it from the ( ⌘ + / ) menu and pick the demo from the block's menu.
 
-The demos use the **published** package. `gitbook-integration/package.json` pins `@ai-atlaas/pixel-foundry` to an exact version, so the demos show what people can install.
+The **Deploy demos** workflow (`.github/workflows/demos.yml`) builds and deploys the demos. It runs after every release, when the demos change on `main`, and by hand from the Actions tab. It always builds with the package version in the root `package.json`, as published on npm, so the demos show what people can install. GitBook re-reads the demo list about once an hour, so a change can take that long to appear in the docs.
 
 | Path in `gitbook-integration/` | What it is |
 | --- | --- |
 | `frame/demos/<id>.tsx` | One demo per file. Each default-exports a small React component. |
 | `frame/demos/demos.json` | The demo list: `id`, menu `title`, minimum frame `height` in pixels (room for its popup), and `top: true` to pin popup demos near the top. |
 | `frame/main.tsx`, `frame/frame.css` | The page inside the frame: the light/dark toggle, auto-height, and layout helpers such as `demo-row`, `demo-stack` and `demo-wide`. |
-| `src/index.tsx` | The GitBook block. |
-| `src/serve.ts` | Serves the frame page and its assets. |
-| `scripts/build-frames.mjs` | Compiles the frame into `src/generated/` (ignored by Git). |
+| `scripts/build-pages.mjs` | Builds the demos into `out/` (ignored by Git): `frame.html`, `assets/`, `demos.json`, and an `index.html` with every demo. |
+| `src/index.tsx` | The GitBook block. It reads `demos.json` from Pages and embeds `frame.html?demo=<id>`. |
 
 To add or change a demo:
 
 1. Write `frame/demos/<id>.tsx` and add it to `frame/demos/demos.json`.
-2. Check it locally. This serves every demo on a stand-in page that sizes each frame the way GitBook does:
+2. Check it locally. This builds the site and serves it the way Pages does, with every demo on one page sized the way GitBook sizes it:
 
    ```bash
    cd gitbook-integration
@@ -141,14 +142,13 @@ To add or change a demo:
    npm run typecheck
    ```
 
-3. Publish a new version of the integration. This needs a GitBook personal access token from an organization member, set once with `npx gitbook auth`. It also needs the organization's ID, the `<id>` in `app.gitbook.com/o/<id>/` (or run `npx gitbook organizations list`). The ID is kept out of the repo, so pass it when publishing:
-
-   ```bash
-   GITBOOK_ORGANIZATION=<id> npm run publish-integration
-   ```
-
-   Publishing stops with a message if `GITBOOK_ORGANIZATION` is not set. The `organization` value in `gitbook-manifest.yaml` is only a placeholder that this variable replaces.
-
+3. Merge it to `main`. **Deploy demos** publishes it to Pages.
 4. Add `{% @pixel-foundry/demo demo="<id>" %}` to the page.
 
-After a package release, bump the pinned version in `gitbook-integration/package.json`, run `npm install`, and publish the integration again.
+To change the block itself (`src/index.tsx` or `gitbook-manifest.yaml`), publish the integration again. This needs a GitBook personal access token from an organization member, set once with `npx gitbook auth`, and the organization's ID, the `<id>` in `app.gitbook.com/o/<id>/` (or run `npx gitbook organizations list`). The ID is kept out of the repo, so pass it when publishing:
+
+```bash
+GITBOOK_ORGANIZATION=<id> npm run publish-integration
+```
+
+Publishing stops with a message if `GITBOOK_ORGANIZATION` is not set. The `organization` value in `gitbook-manifest.yaml` is only a placeholder that this variable replaces.

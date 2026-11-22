@@ -1,5 +1,6 @@
 # GitBook integration that adds a "Pixel Foundry demo" block: a live,
-# interactive component demo served by the integration itself.
+# interactive component demo embedded from GitHub Pages
+# (https://ai-atlaas.github.io/pixel-foundry/, deployed by demos.yml).
 #
 # Publish with `GITBOOK_ORGANIZATION=<id> npm run publish-integration`
 # after `gitbook auth`.
@@ -17,8 +18,8 @@ summary: |
     # How it works
 
     Insert the block from the ( ⌘ + / ) menu and pick a demo from its menu.
-    The demo runs in a frame served by this integration, with a light and
-    dark toggle in the corner.
+    The demo runs in a frame from the Pixel Foundry demos site, with a light
+    and dark toggle in the corner.
 # The GitBook CLI requires this field, but the real organization ID is kept
 # out of the repo: publishing takes it from the GITBOOK_ORGANIZATION
 # environment variable, which overrides this value.

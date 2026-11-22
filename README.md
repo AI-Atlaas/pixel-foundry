@@ -61,7 +61,7 @@ The full docs live in [`docs/`](docs/README.md) (GitBook format):
 ├── scripts/      style build step and release scripts
 ├── test/         palette contrast and token tests
 ├── docs/         GitBook documentation (configured by docs/gitbook-docs.yaml)
-└── gitbook-integration/  GitBook integration that serves the live component demos
+└── gitbook-integration/  live component demos (GitHub Pages) and the GitBook block that embeds them
 ```
 
 ## Development
