@@ -3,8 +3,9 @@
 # Runs in two cases:
 # - A version bump reaches main, normally by merging the "Release <version>"
 #   pull request that the "Prepare release" workflow opens. If the version has
-#   no v<version> tag yet, this publishes it, then tags the commit and creates
-#   the GitHub Release with the notes from the changelog.
+#   no v<version> tag yet, this publishes it, then tags the commit, creates
+#   the GitHub Release with the notes from the changelog, and redeploys the
+#   docs demos (demos.yml).
 # - A GitHub Release is published by hand. This publishes the release's tag.
 #
 # Publishing waits for approval in the "production" environment.
@@ -115,3 +116,15 @@ jobs:
         run: |
           node scripts/release-notes.mjs "$VERSION" > notes.md
           gh release create "v$VERSION" --target "$GITHUB_SHA" --title "v$VERSION" --notes-file notes.md
+
+  # After a push-triggered publish: rebuild the docs demos with the new version.
+  # (The github-pages environment only deploys from main, so after a release
+  # published by hand, run "Deploy demos" from the Actions tab instead.)
+  demos:
+    needs: publish
+    if: github.event_name == 'push' && needs.publish.result == 'success'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/demos.yml

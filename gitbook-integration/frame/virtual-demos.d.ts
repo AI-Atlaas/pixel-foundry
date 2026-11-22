@@ -1,4 +1,4 @@
-// Generated at build time by scripts/build-frames.mjs from frame/demos/demos.json.
+// Generated at build time by scripts/build-pages.mjs from frame/demos/demos.json.
 declare module 'virtual:demos' {
   import type { ComponentType } from 'react';
 
