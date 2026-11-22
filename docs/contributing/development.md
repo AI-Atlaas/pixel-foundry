@@ -128,7 +128,8 @@ The **Deploy demos** workflow (`.github/workflows/demos.yml`) builds and deploys
 | `frame/demos/demos.json` | The demo list: `id`, menu `title`, minimum frame `height` in pixels (room for its popup), and `top: true` to pin popup demos near the top. |
 | `frame/main.tsx`, `frame/frame.css` | The page inside the frame: the light/dark toggle, auto-height, and layout helpers such as `demo-row`, `demo-stack` and `demo-wide`. |
 | `scripts/build-pages.mjs` | Builds the demos into `out/` (ignored by Git): `frame.html`, `assets/`, `demos.json`, and an `index.html` with every demo. |
-| `src/index.tsx` | The GitBook block. It reads `demos.json` from Pages and embeds `frame.html?demo=<id>`. |
+| `src/index.tsx` | The GitBook block. It reads `demos.json` from Pages and embeds the relay page for the chosen demo. |
+| `src/relay.ts` | The relay page the integration serves. It embeds `frame.html?demo=<id>` from Pages and passes the frame's resize messages to GitBook, which only accepts them from its own integration domains. |
 
 To add or change a demo:
 
