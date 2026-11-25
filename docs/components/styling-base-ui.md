@@ -10,7 +10,7 @@ Every wrapper is built from Base UI parts plus `px-*` classes. You can do the sa
 
 | Base UI part | Class |
 | --- | --- |
-| `Button`, any trigger | `px-button` (+ `secondary`, `outline`, `ghost`) |
+| `Button`, any trigger | `px-button` (+ `secondary`, `outline`, `ghost`; sizes `sm`, `lg`) |
 | `Input`, `<input>`, `<textarea>` | `px-input` |
 | Field label | `field-label` |
 | `Select.Trigger` | `px-select` |

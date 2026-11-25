@@ -4,6 +4,16 @@ description: Release history.
 
 # Changelog
 
+## Unreleased
+
+**Added**
+
+* `PixelButton` has a `size` prop: `sm` (32px), `md` (40px, the default) and `lg` (48px). The matching CSS classes are `px-button sm` and `px-button lg`.
+
+**Changed**
+
+* Buttons no longer follow `--control-height`. The default button is 40px tall at every density, instead of 42px (comfortable) or 34px (compact). This also applies to triggers styled with `px-button`.
+
 ## 0.1.2 (2026-11-22)
 
 **Changed**
