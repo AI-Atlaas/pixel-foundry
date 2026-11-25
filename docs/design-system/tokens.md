@@ -36,7 +36,7 @@ See [Palettes](palettes.md) for the values in each theme.
 | `--radius` | `0px` | | Corner radius. Pixels are square |
 | `--pixel` | `2px` | `1px`–`3px` | Main border width |
 | `--pixel-shadow` | `4px` | `0px`–`8px` | Hard shadow offset |
-| `--control-height` | `42px` | `42px` comfortable, `34px` compact | Minimum height of buttons, inputs and selects |
+| `--control-height` | `42px` | `42px` comfortable, `34px` compact | Minimum height of inputs, selects and other form controls (buttons use their own sizes) |
 
 ## Typography
 

@@ -3,13 +3,15 @@
 @font-face{font-family:'Pixelify Sans';src:url('./fonts/pixelify-latin.ttf') format('truetype');font-weight:400 700;font-display:swap}
 @font-face{font-family:'IBM Plex Mono';src:url('./fonts/plex-latin.ttf') format('truetype');font-weight:400;font-display:swap}
 .px-button,.px-input,.px-select,.px-popup,.px-dialog,.px-checkbox,.px-switch,.px-radio,.px-tab,.px-tooltip{font-family:var(--font-body);font-size:calc(12px * var(--type-scale,1.333333));border-radius:var(--radius);box-sizing:border-box}
-.px-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:var(--control-height);padding:9px 15px;border:var(--pixel) solid var(--border);background:var(--primary);color:var(--primary-foreground);box-shadow:var(--pixel-shadow) var(--pixel-shadow) 0 var(--shadow-color);font-weight:500;text-decoration:none;cursor:pointer;position:relative;transition:transform 80ms steps(2),box-shadow 80ms steps(2)}
+.px-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:40px;padding:4px 16px;border:var(--pixel) solid var(--border);background:var(--primary);color:var(--primary-foreground);box-shadow:var(--pixel-shadow) var(--pixel-shadow) 0 var(--shadow-color);font-weight:500;text-decoration:none;cursor:pointer;position:relative;transition:transform 80ms steps(2),box-shadow 80ms steps(2)}
 .px-button:hover{filter:brightness(.96);transform:translate(-1px,-1px);box-shadow:calc(var(--pixel-shadow) + 1px) calc(var(--pixel-shadow) + 1px) 0 var(--shadow-color)}
 .px-button:active,.px-button[data-pressed]{transform:translate(var(--pixel-shadow),var(--pixel-shadow));box-shadow:0 0 0 var(--shadow-color)}
 .px-button.secondary{background:var(--secondary);color:var(--secondary-foreground)}
 .px-button.outline{background:var(--card);color:var(--foreground)}
 .px-button.ghost{background:transparent;color:var(--foreground);box-shadow:none;border-color:transparent}
 .px-button.ghost:hover{background:var(--secondary);transform:none;box-shadow:none}
+.px-button.sm{min-height:32px;padding:2px 12px;gap:6px;font-size:calc(var(--text-base) - 2px)}
+.px-button.lg{min-height:48px;padding:6px 22px;gap:10px}
 .px-button:disabled,.px-button[data-disabled]{background:var(--muted);color:var(--muted-foreground);opacity:.55;box-shadow:none;cursor:not-allowed;transform:none}
 .px-button:focus-visible,.px-select:focus-visible,.px-input:focus-visible,.px-checkbox:focus-visible,.px-switch:focus-visible,.px-radio:focus-visible,.px-tab:focus-visible,.px-accordion-trigger:focus-visible,.px-thumb:focus-visible{outline:2px dashed var(--ring);outline-offset:4px}
 .px-input,.px-select{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:var(--control-height);padding:10px 12px;background:var(--card);color:var(--foreground);border:var(--pixel) solid var(--input);outline:none}

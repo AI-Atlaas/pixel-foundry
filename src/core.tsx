@@ -8,13 +8,17 @@ import { Dialog } from '@base-ui/react/dialog';
 import { Icon } from './icon';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
+/** Button height: `sm` is 32px, `md` is 40px, `lg` is 48px. */
+export type ButtonSize = 'sm' | 'md' | 'lg';
 
 export function PixelButton({
   variant = 'primary',
+  size = 'md',
   className = '',
   ...props
-}: ComponentProps<typeof BaseButton> & { variant?: ButtonVariant }) {
-  return <BaseButton className={`px-button ${variant} ${className}`.trim()} {...props} />;
+}: ComponentProps<typeof BaseButton> & { variant?: ButtonVariant; size?: ButtonSize }) {
+  const sizeClass = size === 'md' ? '' : size;
+  return <BaseButton className={`px-button ${variant} ${sizeClass} ${className}`.replace(/\s+/g, ' ').trim()} {...props} />;
 }
 
 export function PixelSwitch({ label, ...props }: ComponentProps<typeof Switch.Root> & { label: string }) {
