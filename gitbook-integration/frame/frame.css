@@ -64,6 +64,9 @@ body {
   margin: 0;
   font-size: 13px;
   opacity: 0.75;
+  /* Room for the longest note ("Last action: Invite a friend"), so a note
+     that changes text doesn't resize and re-center the demo. */
+  min-width: 30ch;
 }
 
 /* A fixed width for demos whose parts stretch to fill their container

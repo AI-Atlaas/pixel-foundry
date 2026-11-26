@@ -6,7 +6,7 @@
   { "id": "button", "title": "Button", "height": 180 },
   { "id": "checkbox", "title": "Checkbox", "height": 160 },
   { "id": "checkbox-group", "title": "Checkbox group", "height": 180 },
-  { "id": "collapsible", "title": "Collapsible", "height": 140 },
+  { "id": "collapsible", "title": "Collapsible", "height": 140, "top": true },
   { "id": "combobox", "title": "Combobox", "height": 370, "top": true },
   { "id": "context-menu", "title": "Context menu", "height": 260, "top": true },
   { "id": "drawer", "title": "Drawer", "height": 360 },
@@ -34,7 +34,7 @@
   { "id": "toolbar", "title": "Toolbar", "height": 180 },
   { "id": "tooltip", "title": "Tooltip", "height": 160 },
   { "id": "tabs", "title": "Raw Base UI: Tabs", "height": 160 },
-  { "id": "accordion", "title": "Raw Base UI: Accordion", "height": 220 },
+  { "id": "accordion", "title": "Raw Base UI: Accordion", "height": 220, "top": true },
   { "id": "menu", "title": "Raw Base UI: Menu", "height": 240, "top": true },
   { "id": "progress", "title": "Raw Base UI: Progress", "height": 120 }
 ]
