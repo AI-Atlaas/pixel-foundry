@@ -3,7 +3,7 @@
   { "id": "autocomplete", "title": "Autocomplete", "height": 340, "top": true },
   { "id": "avatar", "title": "Avatar", "height": 120 },
   { "id": "badge", "title": "Badge", "height": 120 },
-  { "id": "button", "title": "Button", "height": 120 },
+  { "id": "button", "title": "Button", "height": 180 },
   { "id": "checkbox", "title": "Checkbox", "height": 160 },
   { "id": "checkbox-group", "title": "Checkbox group", "height": 180 },
   { "id": "collapsible", "title": "Collapsible", "height": 140 },

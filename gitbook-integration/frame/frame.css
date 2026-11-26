@@ -55,6 +55,11 @@ body {
   justify-items: start;
 }
 
+.demo-stack.demo-center {
+  justify-items: center;
+  gap: 20px;
+}
+
 .demo-note {
   margin: 0;
   font-size: 13px;
