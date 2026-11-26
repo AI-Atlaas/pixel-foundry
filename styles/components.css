@@ -92,7 +92,7 @@ html body :is([role=slider],.px-slider,.px-thumb):active{cursor:grabbing}
 html body :is(button:disabled,[data-disabled],[aria-disabled=true]){cursor:var(--cursor-blocked,not-allowed)}
 @media(pointer:coarse){html body :is(button,a,input,textarea,[role=button],[role=checkbox],[role=switch],[role=radio],[role=slider]){cursor:auto}}
 /* Let density remain meaningful with the larger responsive text. */
-.px-input,.px-select{padding-block:max(4px,calc((var(--control-height) - 1.5em - 2 * var(--pixel)) / 2))}
+.px-input,.px-select{padding-block:max(2px,calc((var(--control-height) - 1.5em - 2 * var(--pixel)) / 2))}
 /* Reading hierarchy: body / control labels / supporting text / metadata. */
 :root{--text-base:var(--desktop-font-size,16px);--text-label:14px;--text-small:12px;--text-meta:11px}
 body{font-size:var(--text-base);line-height:1.75}
@@ -175,9 +175,9 @@ body{font-size:var(--text-base);line-height:1.75}
 .px-toggle {
   display: inline-grid;
   place-items: center;
-  min-width: 42px;
+  min-width: var(--control-height);
   min-height: var(--control-height);
-  padding: 6px 10px;
+  padding: 2px 10px;
   border: var(--pixel) solid var(--input);
   background: var(--secondary);
   color: var(--foreground);
@@ -468,7 +468,7 @@ body{font-size:var(--text-base);line-height:1.75}
   align-items: center;
   gap: 8px;
   min-height: var(--control-height);
-  padding: 6px 12px;
+  padding: 2px 12px;
   border: 0;
   background: transparent;
   color: var(--foreground);
