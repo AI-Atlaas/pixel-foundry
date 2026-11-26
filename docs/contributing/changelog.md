@@ -4,6 +4,13 @@ description: Release history.
 
 # Changelog
 
+## Unreleased
+
+**Changed**
+
+* Controls line up with the button sizes. `--control-height` is now 40px (comfortable) and 32px (compact), down from 42px and 34px, matching `md` and `sm` buttons. This applies to inputs, selects, toggles, number fields, toolbars and menubars.
+* Toggles, menubar triggers, inputs and selects use less vertical padding, so they reach exactly 32px in compact mode. A toggle's minimum width now follows the control height too.
+
 ## 0.2.0 (2026-11-25)
 
 **Added**

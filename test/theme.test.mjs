@@ -33,7 +33,8 @@ test('geometry settings map to tokens', () => {
   const t = tokens({ ...defaults, pixel: 3, shadow: 8, density: 'compact' });
   assert.equal(t['--pixel'], '3px');
   assert.equal(t['--pixel-shadow'], '8px');
-  assert.equal(t['--control-height'], '34px');
+  assert.equal(t['--control-height'], '32px');
+  assert.equal(tokens(defaults)['--control-height'], '40px');
 });
 
 test('preset CSS has light and dark blocks', () => {

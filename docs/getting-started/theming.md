@@ -32,7 +32,7 @@ Every token can be overridden after the theme import:
   --primary-foreground: #000000; /* readable text on the accent */
   --pixel: 3px;                  /* thicker borders */
   --pixel-shadow: 6px;           /* deeper shadows */
-  --control-height: 34px;        /* compact controls */
+  --control-height: 32px;        /* compact controls */
 }
 ```
 
@@ -50,7 +50,7 @@ applyTheme({
   dark: false,
   pixel: 3,            // border width: 1, 2 or 3
   shadow: 6,           // shadow offset: 0–8
-  density: 'compact',  // comfortable (42px controls) | compact (34px)
+  density: 'compact',  // comfortable (40px controls) | compact (32px)
   accent: '#ff5fa2',   // optional custom primary; '' uses the preset's
   pixelCursor: true,   // bitmap cursors on/off
 });

@@ -32,14 +32,14 @@ Reading text uses a line height of about 1.75.
 
 ## Density
 
-`--control-height` sets the minimum height of inputs, selects and other form controls:
+`--control-height` sets the height of inputs, selects, toggles, toolbars and menubars:
 
-* **Comfortable** (`42px`, default): roomy and touch-friendly.
-* **Compact** (`34px`): for dense desktop tools.
+* **Comfortable** (`40px`, default): roomy and touch-friendly. Matches a default (`md`) button.
+* **Compact** (`32px`): for dense desktop tools. Matches a small (`sm`) button.
 
 Compact mode changes controls only, not the page zoom or text size. Keep touch targets large enough on mobile.
 
-Buttons have their own fixed heights instead: 32px (`sm`), 40px (`md`, the default) and 48px (`lg`). See [Button](../components/button.md#sizes).
+Buttons don't change with density. They have three fixed heights on the same scale: 32px (`sm`), 40px (`md`, the default) and 48px (`lg`). In compact mode, use `size="sm"` buttons to line up with the other controls. See [Button](../components/button.md#sizes).
 
 ## Using your own fonts
 
