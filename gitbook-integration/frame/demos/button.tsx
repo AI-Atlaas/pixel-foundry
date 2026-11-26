@@ -5,14 +5,21 @@ export default function ButtonDemo() {
   const [coins, setCoins] = useState(0);
 
   return (
-    <div className="demo-row">
-      <PixelButton onClick={() => setCoins(coins + 1)}>
-        <Icon name="plus" size={12} /> Coins: {coins}
-      </PixelButton>
-      <PixelButton variant="secondary">Secondary</PixelButton>
-      <PixelButton variant="outline">Outline</PixelButton>
-      <PixelButton variant="ghost">Ghost</PixelButton>
-      <PixelButton disabled>Unavailable</PixelButton>
+    <div className="demo-stack demo-center">
+      <div className="demo-row">
+        <PixelButton onClick={() => setCoins(coins + 1)}>
+          <Icon name="plus" size={12} /> Coins: {coins}
+        </PixelButton>
+        <PixelButton variant="secondary">Secondary</PixelButton>
+        <PixelButton variant="outline">Outline</PixelButton>
+        <PixelButton variant="ghost">Ghost</PixelButton>
+        <PixelButton disabled>Unavailable</PixelButton>
+      </div>
+      <div className="demo-row">
+        <PixelButton size="sm">Small</PixelButton>
+        <PixelButton>Medium</PixelButton>
+        <PixelButton size="lg">Large</PixelButton>
+      </div>
     </div>
   );
 }

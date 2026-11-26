@@ -46,12 +46,14 @@ jobs:
         run: npm ci --ignore-scripts
 
       # Right after a publish, npm can take a minute or two to serve the new
-      # version, so keep trying for about five minutes.
+      # version, so keep trying for about five minutes. --prefer-online makes
+      # each try ask the registry again; without it, npm reuses the "no such
+      # version" answer it cached on the first try.
       - name: Install the released package version
         run: |
           version="$(node -p "require('../package.json').version")"
           for attempt in $(seq 1 20); do
-            if npm install --no-save --ignore-scripts "@ai-atlaas/pixel-foundry@$version"; then
+            if npm install --no-save --ignore-scripts --prefer-online "@ai-atlaas/pixel-foundry@$version"; then
               exit 0
             fi
             echo "Waiting for @ai-atlaas/pixel-foundry@$version on npm (attempt $attempt)"
