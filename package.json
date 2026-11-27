@@ -1,6 +1,6 @@
 {
   "name": "@ai-atlaas/pixel-foundry",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A pixel-art design system for React, built on Base UI.",
   "license": "MIT",
   "repository": {
